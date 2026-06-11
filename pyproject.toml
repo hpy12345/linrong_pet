@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linrong-pet"
+version = "1.3.0"
+description = "林榕 Windows 桌面宠物"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "PySide6-Essentials==6.11.1",
+]
+
+[project.optional-dependencies]
+build = [
+  "edge-tts==7.2.8",
+  "miniaudio==1.71",
+  "numpy==2.4.6",
+  "Pillow==11.3.0",
+  "PyInstaller==6.20.0",
+]
+test = [
+  "pytest==8.4.2",
+  "pytest-qt==4.5.0",
+]
+
+[project.scripts]
+linrong-pet = "linrong_pet.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+linrong_pet = ["assets/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,34 @@
+{
+  "ok": false,
+  "startup_seconds": 2.125,
+  "window_rect": [
+    2185,
+    1072,
+    2480,
+    1392
+  ],
+  "work_area": [
+    0,
+    0,
+    2560,
+    1392
+  ],
+  "inside_work_area": true,
+  "window_style": {
+    "topmost": true,
+    "tool_window": true,
+    "layered_transparency": true,
+    "taskbar_app_window": false
+  },
+  "click_bubble_visible": true,
+  "drag_moved_window": true,
+  "drag_inside_work_area": true,
+  "roaming_observed": false,
+  "single_instance_secondary_exit_code": 0,
+  "tray_message_window_present": true,
+  "resources": {
+    "total_cpu_percent": 0.039,
+    "private_memory_mb": 41.04,
+    "working_set_mb": 78.67
+  }
+}

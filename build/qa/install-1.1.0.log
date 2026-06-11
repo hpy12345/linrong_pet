@@ -1,0 +1,1176 @@
+﻿2026-06-11 14:09:59.600   Log opened. (Time zone: UTC+08:00)
+2026-06-11 14:09:59.600   Setup version: Inno Setup version 6.7.3
+2026-06-11 14:09:59.600   Original Setup EXE: D:\linrong\output\LinRongPet-Setup-1.1.0.exe
+2026-06-11 14:09:59.601   Setup command line: /SL5="$183018E,31837548,879616,D:\linrong\output\LinRongPet-Setup-1.1.0.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CLOSEAPPLICATIONS /LOG=D:\linrong\build\qa\install-1.1.0.log 
+2026-06-11 14:09:59.601   Windows version: 10.0.26100
+2026-06-11 14:09:59.601   Windows architecture: x64 (64-bit)
+2026-06-11 14:09:59.601   Machine types supported by system: x86 x64
+2026-06-11 14:09:59.601   User privileges: Administrative
+2026-06-11 14:09:59.606   Administrative install mode: No
+2026-06-11 14:09:59.606   Install mode root key: HKEY_CURRENT_USER
+2026-06-11 14:09:59.606   64-bit install mode: Yes
+2026-06-11 14:09:59.606   RedirectionGuard status for current process: Enabled in enforcing mode
+2026-06-11 14:09:59.609   Created protected temporary directory: C:\Users\ALTAIR~1\AppData\Local\Temp\is-ILWSYG6GMI.tmp
+2026-06-11 14:09:59.741   Found 81 files to register with RestartManager.
+2026-06-11 14:09:59.741   Calling RestartManager's RmGetList.
+2026-06-11 14:09:59.787   RmGetList finished successfully.
+2026-06-11 14:09:59.787   RestartManager found no applications using one of our files.
+2026-06-11 14:09:59.794   Starting the installation process.
+2026-06-11 14:09:59.797   Directory for uninstall files: D:\LinRongPet
+2026-06-11 14:09:59.797   Will append to existing uninstall log: D:\LinRongPet\unins000.dat
+2026-06-11 14:09:59.803   -- File entry --
+2026-06-11 14:09:59.803   Dest filename: D:\LinRongPet\unins000.exe
+2026-06-11 14:09:59.803   Non-default bitness: 32-bit
+2026-06-11 14:09:59.808   Time stamp of our file: 2026-06-11 14:09:59.261
+2026-06-11 14:09:59.808   Dest file exists.
+2026-06-11 14:09:59.808   Time stamp of existing file: 2026-06-11 14:09:22.499
+2026-06-11 14:09:59.808   Version of our file: 51.1054.0.0
+2026-06-11 14:09:59.810   Version of existing file: 51.1054.0.0
+2026-06-11 14:09:59.810   Installing the file.
+2026-06-11 14:09:59.823   Leaving temporary file in place for now.
+2026-06-11 14:09:59.823   -- File entry --
+2026-06-11 14:09:59.823   Dest filename: D:\LinRongPet\LinRongPet.exe
+2026-06-11 14:09:59.823   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.823   Dest file exists.
+2026-06-11 14:09:59.823   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.823   Installing the file.
+2026-06-11 14:09:59.853   Successfully installed the file.
+2026-06-11 14:09:59.853   -- File entry --
+2026-06-11 14:09:59.853   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-console-l1-1-0.dll
+2026-06-11 14:09:59.853   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.853   Dest file exists.
+2026-06-11 14:09:59.853   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.853   Installing the file.
+2026-06-11 14:09:59.856   Successfully installed the file.
+2026-06-11 14:09:59.856   -- File entry --
+2026-06-11 14:09:59.856   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-datetime-l1-1-0.dll
+2026-06-11 14:09:59.857   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.857   Dest file exists.
+2026-06-11 14:09:59.857   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.857   Installing the file.
+2026-06-11 14:09:59.859   Successfully installed the file.
+2026-06-11 14:09:59.859   -- File entry --
+2026-06-11 14:09:59.859   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-debug-l1-1-0.dll
+2026-06-11 14:09:59.859   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.859   Dest file exists.
+2026-06-11 14:09:59.859   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.860   Installing the file.
+2026-06-11 14:09:59.862   Successfully installed the file.
+2026-06-11 14:09:59.862   -- File entry --
+2026-06-11 14:09:59.862   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-errorhandling-l1-1-0.dll
+2026-06-11 14:09:59.862   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.862   Dest file exists.
+2026-06-11 14:09:59.863   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.863   Installing the file.
+2026-06-11 14:09:59.865   Successfully installed the file.
+2026-06-11 14:09:59.865   -- File entry --
+2026-06-11 14:09:59.865   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-file-l1-1-0.dll
+2026-06-11 14:09:59.865   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.865   Dest file exists.
+2026-06-11 14:09:59.865   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.865   Installing the file.
+2026-06-11 14:09:59.868   Successfully installed the file.
+2026-06-11 14:09:59.868   -- File entry --
+2026-06-11 14:09:59.868   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-file-l1-2-0.dll
+2026-06-11 14:09:59.869   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.869   Dest file exists.
+2026-06-11 14:09:59.869   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.869   Installing the file.
+2026-06-11 14:09:59.872   Successfully installed the file.
+2026-06-11 14:09:59.872   -- File entry --
+2026-06-11 14:09:59.872   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-file-l2-1-0.dll
+2026-06-11 14:09:59.872   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.872   Dest file exists.
+2026-06-11 14:09:59.873   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.873   Installing the file.
+2026-06-11 14:09:59.875   Successfully installed the file.
+2026-06-11 14:09:59.876   -- File entry --
+2026-06-11 14:09:59.876   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-handle-l1-1-0.dll
+2026-06-11 14:09:59.876   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.876   Dest file exists.
+2026-06-11 14:09:59.876   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.876   Installing the file.
+2026-06-11 14:09:59.879   Successfully installed the file.
+2026-06-11 14:09:59.879   -- File entry --
+2026-06-11 14:09:59.879   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-heap-l1-1-0.dll
+2026-06-11 14:09:59.879   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.879   Dest file exists.
+2026-06-11 14:09:59.879   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.879   Installing the file.
+2026-06-11 14:09:59.882   Successfully installed the file.
+2026-06-11 14:09:59.882   -- File entry --
+2026-06-11 14:09:59.882   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-interlocked-l1-1-0.dll
+2026-06-11 14:09:59.883   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.883   Dest file exists.
+2026-06-11 14:09:59.883   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.883   Installing the file.
+2026-06-11 14:09:59.886   Successfully installed the file.
+2026-06-11 14:09:59.886   -- File entry --
+2026-06-11 14:09:59.886   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-libraryloader-l1-1-0.dll
+2026-06-11 14:09:59.887   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.887   Dest file exists.
+2026-06-11 14:09:59.887   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.887   Installing the file.
+2026-06-11 14:09:59.890   Successfully installed the file.
+2026-06-11 14:09:59.890   -- File entry --
+2026-06-11 14:09:59.890   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-localization-l1-2-0.dll
+2026-06-11 14:09:59.890   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.890   Dest file exists.
+2026-06-11 14:09:59.890   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.890   Installing the file.
+2026-06-11 14:09:59.893   Successfully installed the file.
+2026-06-11 14:09:59.894   -- File entry --
+2026-06-11 14:09:59.894   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-memory-l1-1-0.dll
+2026-06-11 14:09:59.894   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.894   Dest file exists.
+2026-06-11 14:09:59.894   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.894   Installing the file.
+2026-06-11 14:09:59.897   Successfully installed the file.
+2026-06-11 14:09:59.898   -- File entry --
+2026-06-11 14:09:59.898   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-namedpipe-l1-1-0.dll
+2026-06-11 14:09:59.899   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.899   Dest file exists.
+2026-06-11 14:09:59.899   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.899   Installing the file.
+2026-06-11 14:09:59.902   Successfully installed the file.
+2026-06-11 14:09:59.903   -- File entry --
+2026-06-11 14:09:59.903   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-processenvironment-l1-1-0.dll
+2026-06-11 14:09:59.903   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.903   Dest file exists.
+2026-06-11 14:09:59.903   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.903   Installing the file.
+2026-06-11 14:09:59.906   Successfully installed the file.
+2026-06-11 14:09:59.906   -- File entry --
+2026-06-11 14:09:59.906   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-processthreads-l1-1-0.dll
+2026-06-11 14:09:59.907   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.907   Dest file exists.
+2026-06-11 14:09:59.907   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.907   Installing the file.
+2026-06-11 14:09:59.910   Successfully installed the file.
+2026-06-11 14:09:59.910   -- File entry --
+2026-06-11 14:09:59.910   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-processthreads-l1-1-1.dll
+2026-06-11 14:09:59.911   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.911   Dest file exists.
+2026-06-11 14:09:59.911   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.911   Installing the file.
+2026-06-11 14:09:59.913   Successfully installed the file.
+2026-06-11 14:09:59.914   -- File entry --
+2026-06-11 14:09:59.914   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-profile-l1-1-0.dll
+2026-06-11 14:09:59.915   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.915   Dest file exists.
+2026-06-11 14:09:59.915   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.915   Installing the file.
+2026-06-11 14:09:59.918   Successfully installed the file.
+2026-06-11 14:09:59.918   -- File entry --
+2026-06-11 14:09:59.918   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-rtlsupport-l1-1-0.dll
+2026-06-11 14:09:59.918   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.918   Dest file exists.
+2026-06-11 14:09:59.919   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.919   Installing the file.
+2026-06-11 14:09:59.921   Successfully installed the file.
+2026-06-11 14:09:59.921   -- File entry --
+2026-06-11 14:09:59.921   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-string-l1-1-0.dll
+2026-06-11 14:09:59.922   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.922   Dest file exists.
+2026-06-11 14:09:59.922   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.922   Installing the file.
+2026-06-11 14:09:59.925   Successfully installed the file.
+2026-06-11 14:09:59.925   -- File entry --
+2026-06-11 14:09:59.925   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-synch-l1-1-0.dll
+2026-06-11 14:09:59.925   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.925   Dest file exists.
+2026-06-11 14:09:59.926   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.926   Installing the file.
+2026-06-11 14:09:59.928   Successfully installed the file.
+2026-06-11 14:09:59.929   -- File entry --
+2026-06-11 14:09:59.929   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-synch-l1-2-0.dll
+2026-06-11 14:09:59.929   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.929   Dest file exists.
+2026-06-11 14:09:59.929   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.929   Installing the file.
+2026-06-11 14:09:59.932   Successfully installed the file.
+2026-06-11 14:09:59.933   -- File entry --
+2026-06-11 14:09:59.933   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-sysinfo-l1-1-0.dll
+2026-06-11 14:09:59.933   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.933   Dest file exists.
+2026-06-11 14:09:59.933   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.933   Installing the file.
+2026-06-11 14:09:59.936   Successfully installed the file.
+2026-06-11 14:09:59.936   -- File entry --
+2026-06-11 14:09:59.936   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-timezone-l1-1-0.dll
+2026-06-11 14:09:59.937   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.937   Dest file exists.
+2026-06-11 14:09:59.937   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.937   Installing the file.
+2026-06-11 14:09:59.939   Successfully installed the file.
+2026-06-11 14:09:59.939   -- File entry --
+2026-06-11 14:09:59.940   Dest filename: D:\LinRongPet\_internal\api-ms-win-core-util-l1-1-0.dll
+2026-06-11 14:09:59.940   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.940   Dest file exists.
+2026-06-11 14:09:59.940   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.940   Installing the file.
+2026-06-11 14:09:59.943   Successfully installed the file.
+2026-06-11 14:09:59.943   -- File entry --
+2026-06-11 14:09:59.943   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-conio-l1-1-0.dll
+2026-06-11 14:09:59.943   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.943   Dest file exists.
+2026-06-11 14:09:59.943   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.944   Installing the file.
+2026-06-11 14:09:59.946   Successfully installed the file.
+2026-06-11 14:09:59.946   -- File entry --
+2026-06-11 14:09:59.946   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-convert-l1-1-0.dll
+2026-06-11 14:09:59.946   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.946   Dest file exists.
+2026-06-11 14:09:59.946   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.947   Installing the file.
+2026-06-11 14:09:59.949   Successfully installed the file.
+2026-06-11 14:09:59.949   -- File entry --
+2026-06-11 14:09:59.950   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-environment-l1-1-0.dll
+2026-06-11 14:09:59.950   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.950   Dest file exists.
+2026-06-11 14:09:59.950   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.950   Installing the file.
+2026-06-11 14:09:59.953   Successfully installed the file.
+2026-06-11 14:09:59.953   -- File entry --
+2026-06-11 14:09:59.953   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-filesystem-l1-1-0.dll
+2026-06-11 14:09:59.954   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.954   Dest file exists.
+2026-06-11 14:09:59.954   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.954   Installing the file.
+2026-06-11 14:09:59.956   Successfully installed the file.
+2026-06-11 14:09:59.956   -- File entry --
+2026-06-11 14:09:59.956   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-heap-l1-1-0.dll
+2026-06-11 14:09:59.957   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.957   Dest file exists.
+2026-06-11 14:09:59.957   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.957   Installing the file.
+2026-06-11 14:09:59.960   Successfully installed the file.
+2026-06-11 14:09:59.960   -- File entry --
+2026-06-11 14:09:59.960   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-locale-l1-1-0.dll
+2026-06-11 14:09:59.960   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.960   Dest file exists.
+2026-06-11 14:09:59.960   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.961   Installing the file.
+2026-06-11 14:09:59.963   Successfully installed the file.
+2026-06-11 14:09:59.964   -- File entry --
+2026-06-11 14:09:59.964   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-math-l1-1-0.dll
+2026-06-11 14:09:59.964   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.964   Dest file exists.
+2026-06-11 14:09:59.964   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.964   Installing the file.
+2026-06-11 14:09:59.967   Successfully installed the file.
+2026-06-11 14:09:59.967   -- File entry --
+2026-06-11 14:09:59.967   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-process-l1-1-0.dll
+2026-06-11 14:09:59.968   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.968   Dest file exists.
+2026-06-11 14:09:59.968   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.968   Installing the file.
+2026-06-11 14:09:59.970   Successfully installed the file.
+2026-06-11 14:09:59.970   -- File entry --
+2026-06-11 14:09:59.970   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-runtime-l1-1-0.dll
+2026-06-11 14:09:59.971   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.971   Dest file exists.
+2026-06-11 14:09:59.971   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.971   Installing the file.
+2026-06-11 14:09:59.973   Successfully installed the file.
+2026-06-11 14:09:59.973   -- File entry --
+2026-06-11 14:09:59.973   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-stdio-l1-1-0.dll
+2026-06-11 14:09:59.974   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.974   Dest file exists.
+2026-06-11 14:09:59.974   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.974   Installing the file.
+2026-06-11 14:09:59.976   Successfully installed the file.
+2026-06-11 14:09:59.976   -- File entry --
+2026-06-11 14:09:59.976   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-string-l1-1-0.dll
+2026-06-11 14:09:59.977   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.977   Dest file exists.
+2026-06-11 14:09:59.977   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.977   Installing the file.
+2026-06-11 14:09:59.980   Successfully installed the file.
+2026-06-11 14:09:59.980   -- File entry --
+2026-06-11 14:09:59.980   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-time-l1-1-0.dll
+2026-06-11 14:09:59.981   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.981   Dest file exists.
+2026-06-11 14:09:59.981   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.981   Installing the file.
+2026-06-11 14:09:59.984   Successfully installed the file.
+2026-06-11 14:09:59.984   -- File entry --
+2026-06-11 14:09:59.984   Dest filename: D:\LinRongPet\_internal\api-ms-win-crt-utility-l1-1-0.dll
+2026-06-11 14:09:59.984   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.984   Dest file exists.
+2026-06-11 14:09:59.985   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.985   Installing the file.
+2026-06-11 14:09:59.987   Successfully installed the file.
+2026-06-11 14:09:59.988   -- File entry --
+2026-06-11 14:09:59.988   Dest filename: D:\LinRongPet\_internal\base_library.zip
+2026-06-11 14:09:59.988   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.988   Dest file exists.
+2026-06-11 14:09:59.988   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:09:59.988   Installing the file.
+2026-06-11 14:10:00.021   Successfully installed the file.
+2026-06-11 14:10:00.021   -- File entry --
+2026-06-11 14:10:00.021   Dest filename: D:\LinRongPet\_internal\libcrypto-3-x64.dll
+2026-06-11 14:10:00.022   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.022   Dest file exists.
+2026-06-11 14:10:00.022   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.022   Installing the file.
+2026-06-11 14:10:00.144   Successfully installed the file.
+2026-06-11 14:10:00.145   -- File entry --
+2026-06-11 14:10:00.145   Dest filename: D:\LinRongPet\_internal\libcrypto-3.dll
+2026-06-11 14:10:00.145   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.145   Dest file exists.
+2026-06-11 14:10:00.145   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.145   Installing the file.
+2026-06-11 14:10:00.229   Successfully installed the file.
+2026-06-11 14:10:00.229   -- File entry --
+2026-06-11 14:10:00.229   Dest filename: D:\LinRongPet\_internal\libssl-3-x64.dll
+2026-06-11 14:10:00.229   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.229   Dest file exists.
+2026-06-11 14:10:00.229   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.229   Installing the file.
+2026-06-11 14:10:00.249   Successfully installed the file.
+2026-06-11 14:10:00.250   -- File entry --
+2026-06-11 14:10:00.250   Dest filename: D:\LinRongPet\_internal\python3.dll
+2026-06-11 14:10:00.250   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.250   Dest file exists.
+2026-06-11 14:10:00.250   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.250   Installing the file.
+2026-06-11 14:10:00.253   Successfully installed the file.
+2026-06-11 14:10:00.254   -- File entry --
+2026-06-11 14:10:00.254   Dest filename: D:\LinRongPet\_internal\python312.dll
+2026-06-11 14:10:00.254   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.254   Dest file exists.
+2026-06-11 14:10:00.254   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.254   Installing the file.
+2026-06-11 14:10:00.409   Successfully installed the file.
+2026-06-11 14:10:00.409   -- File entry --
+2026-06-11 14:10:00.409   Dest filename: D:\LinRongPet\_internal\select.pyd
+2026-06-11 14:10:00.409   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.409   Dest file exists.
+2026-06-11 14:10:00.409   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.409   Installing the file.
+2026-06-11 14:10:00.411   Successfully installed the file.
+2026-06-11 14:10:00.411   -- File entry --
+2026-06-11 14:10:00.411   Dest filename: D:\LinRongPet\_internal\ucrtbase.dll
+2026-06-11 14:10:00.411   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.411   Dest file exists.
+2026-06-11 14:10:00.411   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.411   Installing the file.
+2026-06-11 14:10:00.454   Successfully installed the file.
+2026-06-11 14:10:00.454   -- File entry --
+2026-06-11 14:10:00.454   Dest filename: D:\LinRongPet\_internal\unicodedata.pyd
+2026-06-11 14:10:00.454   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.454   Dest file exists.
+2026-06-11 14:10:00.454   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.454   Installing the file.
+2026-06-11 14:10:00.485   Successfully installed the file.
+2026-06-11 14:10:00.485   -- File entry --
+2026-06-11 14:10:00.485   Dest filename: D:\LinRongPet\_internal\VCRUNTIME140.dll
+2026-06-11 14:10:00.486   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.486   Dest file exists.
+2026-06-11 14:10:00.486   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.486   Installing the file.
+2026-06-11 14:10:00.490   Successfully installed the file.
+2026-06-11 14:10:00.490   -- File entry --
+2026-06-11 14:10:00.490   Dest filename: D:\LinRongPet\_internal\VCRUNTIME140_1.dll
+2026-06-11 14:10:00.491   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.491   Dest file exists.
+2026-06-11 14:10:00.491   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.491   Installing the file.
+2026-06-11 14:10:00.493   Successfully installed the file.
+2026-06-11 14:10:00.494   -- File entry --
+2026-06-11 14:10:00.494   Dest filename: D:\LinRongPet\_internal\winsound.pyd
+2026-06-11 14:10:00.494   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.494   Dest file exists.
+2026-06-11 14:10:00.494   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.494   Installing the file.
+2026-06-11 14:10:00.496   Successfully installed the file.
+2026-06-11 14:10:00.496   -- File entry --
+2026-06-11 14:10:00.497   Dest filename: D:\LinRongPet\_internal\_bz2.pyd
+2026-06-11 14:10:00.497   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.497   Dest file exists.
+2026-06-11 14:10:00.497   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.497   Installing the file.
+2026-06-11 14:10:00.501   Successfully installed the file.
+2026-06-11 14:10:00.501   -- File entry --
+2026-06-11 14:10:00.501   Dest filename: D:\LinRongPet\_internal\_decimal.pyd
+2026-06-11 14:10:00.502   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.502   Dest file exists.
+2026-06-11 14:10:00.502   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.502   Installing the file.
+2026-06-11 14:10:00.511   Successfully installed the file.
+2026-06-11 14:10:00.511   -- File entry --
+2026-06-11 14:10:00.511   Dest filename: D:\LinRongPet\_internal\_hashlib.pyd
+2026-06-11 14:10:00.511   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.511   Dest file exists.
+2026-06-11 14:10:00.512   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.512   Installing the file.
+2026-06-11 14:10:00.516   Successfully installed the file.
+2026-06-11 14:10:00.516   -- File entry --
+2026-06-11 14:10:00.516   Dest filename: D:\LinRongPet\_internal\_lzma.pyd
+2026-06-11 14:10:00.517   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.517   Dest file exists.
+2026-06-11 14:10:00.517   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.517   Installing the file.
+2026-06-11 14:10:00.524   Successfully installed the file.
+2026-06-11 14:10:00.524   -- File entry --
+2026-06-11 14:10:00.524   Dest filename: D:\LinRongPet\_internal\_socket.pyd
+2026-06-11 14:10:00.524   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.524   Dest file exists.
+2026-06-11 14:10:00.524   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.524   Installing the file.
+2026-06-11 14:10:00.528   Successfully installed the file.
+2026-06-11 14:10:00.529   -- File entry --
+2026-06-11 14:10:00.529   Dest filename: D:\LinRongPet\_internal\assets\animation.json
+2026-06-11 14:10:00.529   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.529   Dest file exists.
+2026-06-11 14:10:00.529   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.529   Installing the file.
+2026-06-11 14:10:00.531   Successfully installed the file.
+2026-06-11 14:10:00.532   -- File entry --
+2026-06-11 14:10:00.532   Dest filename: D:\LinRongPet\_internal\assets\linrong.ico
+2026-06-11 14:10:00.532   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.532   Dest file exists.
+2026-06-11 14:10:00.532   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.532   Installing the file.
+2026-06-11 14:10:00.537   Successfully installed the file.
+2026-06-11 14:10:00.537   -- File entry --
+2026-06-11 14:10:00.537   Dest filename: D:\LinRongPet\_internal\assets\spritesheet.webp
+2026-06-11 14:10:00.538   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.538   Dest file exists.
+2026-06-11 14:10:00.538   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.538   Installing the file.
+2026-06-11 14:10:00.569   Successfully installed the file.
+2026-06-11 14:10:00.569   -- File entry --
+2026-06-11 14:10:00.569   Dest filename: D:\LinRongPet\_internal\assets\audio\company.wav
+2026-06-11 14:10:00.570   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.570   Dest file exists.
+2026-06-11 14:10:00.570   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.570   Installing the file.
+2026-06-11 14:10:00.575   Successfully installed the file.
+2026-06-11 14:10:00.575   -- File entry --
+2026-06-11 14:10:00.576   Dest filename: D:\LinRongPet\_internal\assets\audio\found.wav
+2026-06-11 14:10:00.576   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.576   Dest file exists.
+2026-06-11 14:10:00.576   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.576   Installing the file.
+2026-06-11 14:10:00.583   Successfully installed the file.
+2026-06-11 14:10:00.584   -- File entry --
+2026-06-11 14:10:00.584   Dest filename: D:\LinRongPet\_internal\assets\audio\happy.wav
+2026-06-11 14:10:00.584   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.584   Dest file exists.
+2026-06-11 14:10:00.584   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.584   Installing the file.
+2026-06-11 14:10:00.589   Successfully installed the file.
+2026-06-11 14:10:00.589   -- File entry --
+2026-06-11 14:10:00.589   Dest filename: D:\LinRongPet\_internal\assets\audio\hello.wav
+2026-06-11 14:10:00.590   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.590   Dest file exists.
+2026-06-11 14:10:00.590   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.590   Installing the file.
+2026-06-11 14:10:00.597   Successfully installed the file.
+2026-06-11 14:10:00.597   -- File entry --
+2026-06-11 14:10:00.597   Dest filename: D:\LinRongPet\_internal\assets\audio\poked.wav
+2026-06-11 14:10:00.598   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.598   Dest file exists.
+2026-06-11 14:10:00.598   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.598   Installing the file.
+2026-06-11 14:10:00.603   Successfully installed the file.
+2026-06-11 14:10:00.603   -- File entry --
+2026-06-11 14:10:00.603   Dest filename: D:\LinRongPet\_internal\assets\audio\rest.wav
+2026-06-11 14:10:00.604   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.604   Dest file exists.
+2026-06-11 14:10:00.604   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.604   Installing the file.
+2026-06-11 14:10:00.611   Successfully installed the file.
+2026-06-11 14:10:00.611   -- File entry --
+2026-06-11 14:10:00.611   Dest filename: D:\LinRongPet\_internal\assets\frames\failed-00.webp
+2026-06-11 14:10:00.611   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.611   Dest file exists.
+2026-06-11 14:10:00.611   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.611   Installing the file.
+2026-06-11 14:10:00.616   Successfully installed the file.
+2026-06-11 14:10:00.616   -- File entry --
+2026-06-11 14:10:00.617   Dest filename: D:\LinRongPet\_internal\assets\frames\failed-01.webp
+2026-06-11 14:10:00.617   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.617   Dest file exists.
+2026-06-11 14:10:00.617   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.617   Installing the file.
+2026-06-11 14:10:00.621   Successfully installed the file.
+2026-06-11 14:10:00.621   -- File entry --
+2026-06-11 14:10:00.621   Dest filename: D:\LinRongPet\_internal\assets\frames\failed-02.webp
+2026-06-11 14:10:00.621   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.621   Dest file exists.
+2026-06-11 14:10:00.621   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.621   Installing the file.
+2026-06-11 14:10:00.624   Successfully installed the file.
+2026-06-11 14:10:00.624   -- File entry --
+2026-06-11 14:10:00.624   Dest filename: D:\LinRongPet\_internal\assets\frames\failed-03.webp
+2026-06-11 14:10:00.625   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.625   Dest file exists.
+2026-06-11 14:10:00.625   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.625   Installing the file.
+2026-06-11 14:10:00.627   Successfully installed the file.
+2026-06-11 14:10:00.627   -- File entry --
+2026-06-11 14:10:00.627   Dest filename: D:\LinRongPet\_internal\assets\frames\failed-04.webp
+2026-06-11 14:10:00.628   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.628   Dest file exists.
+2026-06-11 14:10:00.628   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.628   Installing the file.
+2026-06-11 14:10:00.630   Successfully installed the file.
+2026-06-11 14:10:00.630   -- File entry --
+2026-06-11 14:10:00.630   Dest filename: D:\LinRongPet\_internal\assets\frames\failed-05.webp
+2026-06-11 14:10:00.631   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.631   Dest file exists.
+2026-06-11 14:10:00.631   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.631   Installing the file.
+2026-06-11 14:10:00.634   Successfully installed the file.
+2026-06-11 14:10:00.634   -- File entry --
+2026-06-11 14:10:00.634   Dest filename: D:\LinRongPet\_internal\assets\frames\failed-06.webp
+2026-06-11 14:10:00.634   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.634   Dest file exists.
+2026-06-11 14:10:00.634   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.634   Installing the file.
+2026-06-11 14:10:00.637   Successfully installed the file.
+2026-06-11 14:10:00.637   -- File entry --
+2026-06-11 14:10:00.637   Dest filename: D:\LinRongPet\_internal\assets\frames\failed-07.webp
+2026-06-11 14:10:00.637   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.637   Dest file exists.
+2026-06-11 14:10:00.637   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.637   Installing the file.
+2026-06-11 14:10:00.641   Successfully installed the file.
+2026-06-11 14:10:00.641   -- File entry --
+2026-06-11 14:10:00.641   Dest filename: D:\LinRongPet\_internal\assets\frames\idle-00.webp
+2026-06-11 14:10:00.641   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.642   Dest file exists.
+2026-06-11 14:10:00.642   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.642   Installing the file.
+2026-06-11 14:10:00.644   Successfully installed the file.
+2026-06-11 14:10:00.644   -- File entry --
+2026-06-11 14:10:00.645   Dest filename: D:\LinRongPet\_internal\assets\frames\idle-01.webp
+2026-06-11 14:10:00.645   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.645   Dest file exists.
+2026-06-11 14:10:00.645   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.645   Installing the file.
+2026-06-11 14:10:00.648   Successfully installed the file.
+2026-06-11 14:10:00.648   -- File entry --
+2026-06-11 14:10:00.648   Dest filename: D:\LinRongPet\_internal\assets\frames\idle-02.webp
+2026-06-11 14:10:00.649   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.649   Dest file exists.
+2026-06-11 14:10:00.649   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.649   Installing the file.
+2026-06-11 14:10:00.651   Successfully installed the file.
+2026-06-11 14:10:00.651   -- File entry --
+2026-06-11 14:10:00.651   Dest filename: D:\LinRongPet\_internal\assets\frames\idle-03.webp
+2026-06-11 14:10:00.652   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.652   Dest file exists.
+2026-06-11 14:10:00.652   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.652   Installing the file.
+2026-06-11 14:10:00.654   Successfully installed the file.
+2026-06-11 14:10:00.654   -- File entry --
+2026-06-11 14:10:00.654   Dest filename: D:\LinRongPet\_internal\assets\frames\idle-04.webp
+2026-06-11 14:10:00.654   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.654   Dest file exists.
+2026-06-11 14:10:00.655   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.655   Installing the file.
+2026-06-11 14:10:00.657   Successfully installed the file.
+2026-06-11 14:10:00.657   -- File entry --
+2026-06-11 14:10:00.657   Dest filename: D:\LinRongPet\_internal\assets\frames\idle-05.webp
+2026-06-11 14:10:00.657   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.657   Dest file exists.
+2026-06-11 14:10:00.657   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.657   Installing the file.
+2026-06-11 14:10:00.660   Successfully installed the file.
+2026-06-11 14:10:00.660   -- File entry --
+2026-06-11 14:10:00.660   Dest filename: D:\LinRongPet\_internal\assets\frames\jumping-00.webp
+2026-06-11 14:10:00.660   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.660   Dest file exists.
+2026-06-11 14:10:00.660   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.660   Installing the file.
+2026-06-11 14:10:00.662   Successfully installed the file.
+2026-06-11 14:10:00.663   -- File entry --
+2026-06-11 14:10:00.663   Dest filename: D:\LinRongPet\_internal\assets\frames\jumping-01.webp
+2026-06-11 14:10:00.663   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.663   Dest file exists.
+2026-06-11 14:10:00.663   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.663   Installing the file.
+2026-06-11 14:10:00.666   Successfully installed the file.
+2026-06-11 14:10:00.666   -- File entry --
+2026-06-11 14:10:00.666   Dest filename: D:\LinRongPet\_internal\assets\frames\jumping-02.webp
+2026-06-11 14:10:00.666   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.666   Dest file exists.
+2026-06-11 14:10:00.666   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.666   Installing the file.
+2026-06-11 14:10:00.671   Successfully installed the file.
+2026-06-11 14:10:00.671   -- File entry --
+2026-06-11 14:10:00.671   Dest filename: D:\LinRongPet\_internal\assets\frames\jumping-03.webp
+2026-06-11 14:10:00.671   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.672   Dest file exists.
+2026-06-11 14:10:00.672   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.672   Installing the file.
+2026-06-11 14:10:00.675   Successfully installed the file.
+2026-06-11 14:10:00.675   -- File entry --
+2026-06-11 14:10:00.675   Dest filename: D:\LinRongPet\_internal\assets\frames\jumping-04.webp
+2026-06-11 14:10:00.675   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.675   Dest file exists.
+2026-06-11 14:10:00.675   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.675   Installing the file.
+2026-06-11 14:10:00.678   Successfully installed the file.
+2026-06-11 14:10:00.678   -- File entry --
+2026-06-11 14:10:00.678   Dest filename: D:\LinRongPet\_internal\assets\frames\review-00.webp
+2026-06-11 14:10:00.679   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.679   Dest file exists.
+2026-06-11 14:10:00.679   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.679   Installing the file.
+2026-06-11 14:10:00.683   Successfully installed the file.
+2026-06-11 14:10:00.683   -- File entry --
+2026-06-11 14:10:00.683   Dest filename: D:\LinRongPet\_internal\assets\frames\review-01.webp
+2026-06-11 14:10:00.683   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.683   Dest file exists.
+2026-06-11 14:10:00.683   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.684   Installing the file.
+2026-06-11 14:10:00.688   Successfully installed the file.
+2026-06-11 14:10:00.688   -- File entry --
+2026-06-11 14:10:00.689   Dest filename: D:\LinRongPet\_internal\assets\frames\review-02.webp
+2026-06-11 14:10:00.689   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.689   Dest file exists.
+2026-06-11 14:10:00.689   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.689   Installing the file.
+2026-06-11 14:10:00.694   Successfully installed the file.
+2026-06-11 14:10:00.694   -- File entry --
+2026-06-11 14:10:00.694   Dest filename: D:\LinRongPet\_internal\assets\frames\review-03.webp
+2026-06-11 14:10:00.694   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.694   Dest file exists.
+2026-06-11 14:10:00.694   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.694   Installing the file.
+2026-06-11 14:10:00.698   Successfully installed the file.
+2026-06-11 14:10:00.698   -- File entry --
+2026-06-11 14:10:00.698   Dest filename: D:\LinRongPet\_internal\assets\frames\review-04.webp
+2026-06-11 14:10:00.699   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.699   Dest file exists.
+2026-06-11 14:10:00.700   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.700   Installing the file.
+2026-06-11 14:10:00.704   Successfully installed the file.
+2026-06-11 14:10:00.705   -- File entry --
+2026-06-11 14:10:00.705   Dest filename: D:\LinRongPet\_internal\assets\frames\review-05.webp
+2026-06-11 14:10:00.705   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.705   Dest file exists.
+2026-06-11 14:10:00.705   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.705   Installing the file.
+2026-06-11 14:10:00.709   Successfully installed the file.
+2026-06-11 14:10:00.709   -- File entry --
+2026-06-11 14:10:00.709   Dest filename: D:\LinRongPet\_internal\assets\frames\running-00.webp
+2026-06-11 14:10:00.709   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.709   Dest file exists.
+2026-06-11 14:10:00.709   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.709   Installing the file.
+2026-06-11 14:10:00.711   Successfully installed the file.
+2026-06-11 14:10:00.711   -- File entry --
+2026-06-11 14:10:00.712   Dest filename: D:\LinRongPet\_internal\assets\frames\running-01.webp
+2026-06-11 14:10:00.712   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.712   Dest file exists.
+2026-06-11 14:10:00.712   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.712   Installing the file.
+2026-06-11 14:10:00.715   Successfully installed the file.
+2026-06-11 14:10:00.715   -- File entry --
+2026-06-11 14:10:00.715   Dest filename: D:\LinRongPet\_internal\assets\frames\running-02.webp
+2026-06-11 14:10:00.715   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.715   Dest file exists.
+2026-06-11 14:10:00.716   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.716   Installing the file.
+2026-06-11 14:10:00.721   Successfully installed the file.
+2026-06-11 14:10:00.721   -- File entry --
+2026-06-11 14:10:00.721   Dest filename: D:\LinRongPet\_internal\assets\frames\running-03.webp
+2026-06-11 14:10:00.721   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.721   Dest file exists.
+2026-06-11 14:10:00.722   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.722   Installing the file.
+2026-06-11 14:10:00.723   Successfully installed the file.
+2026-06-11 14:10:00.724   -- File entry --
+2026-06-11 14:10:00.724   Dest filename: D:\LinRongPet\_internal\assets\frames\running-04.webp
+2026-06-11 14:10:00.724   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.724   Dest file exists.
+2026-06-11 14:10:00.724   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.724   Installing the file.
+2026-06-11 14:10:00.727   Successfully installed the file.
+2026-06-11 14:10:00.727   -- File entry --
+2026-06-11 14:10:00.727   Dest filename: D:\LinRongPet\_internal\assets\frames\running-05.webp
+2026-06-11 14:10:00.727   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.727   Dest file exists.
+2026-06-11 14:10:00.727   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.727   Installing the file.
+2026-06-11 14:10:00.729   Successfully installed the file.
+2026-06-11 14:10:00.729   -- File entry --
+2026-06-11 14:10:00.729   Dest filename: D:\LinRongPet\_internal\assets\frames\running-left-00.webp
+2026-06-11 14:10:00.729   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.730   Dest file exists.
+2026-06-11 14:10:00.730   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.730   Installing the file.
+2026-06-11 14:10:00.733   Successfully installed the file.
+2026-06-11 14:10:00.733   -- File entry --
+2026-06-11 14:10:00.733   Dest filename: D:\LinRongPet\_internal\assets\frames\running-left-01.webp
+2026-06-11 14:10:00.733   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.733   Dest file exists.
+2026-06-11 14:10:00.733   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.734   Installing the file.
+2026-06-11 14:10:00.736   Successfully installed the file.
+2026-06-11 14:10:00.736   -- File entry --
+2026-06-11 14:10:00.736   Dest filename: D:\LinRongPet\_internal\assets\frames\running-left-02.webp
+2026-06-11 14:10:00.736   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.736   Dest file exists.
+2026-06-11 14:10:00.736   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.736   Installing the file.
+2026-06-11 14:10:00.738   Successfully installed the file.
+2026-06-11 14:10:00.738   -- File entry --
+2026-06-11 14:10:00.739   Dest filename: D:\LinRongPet\_internal\assets\frames\running-left-03.webp
+2026-06-11 14:10:00.739   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.739   Dest file exists.
+2026-06-11 14:10:00.739   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.739   Installing the file.
+2026-06-11 14:10:00.741   Successfully installed the file.
+2026-06-11 14:10:00.741   -- File entry --
+2026-06-11 14:10:00.741   Dest filename: D:\LinRongPet\_internal\assets\frames\running-left-04.webp
+2026-06-11 14:10:00.742   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.742   Dest file exists.
+2026-06-11 14:10:00.742   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.742   Installing the file.
+2026-06-11 14:10:00.744   Successfully installed the file.
+2026-06-11 14:10:00.744   -- File entry --
+2026-06-11 14:10:00.744   Dest filename: D:\LinRongPet\_internal\assets\frames\running-left-05.webp
+2026-06-11 14:10:00.744   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.744   Dest file exists.
+2026-06-11 14:10:00.744   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.744   Installing the file.
+2026-06-11 14:10:00.746   Successfully installed the file.
+2026-06-11 14:10:00.747   -- File entry --
+2026-06-11 14:10:00.747   Dest filename: D:\LinRongPet\_internal\assets\frames\running-left-06.webp
+2026-06-11 14:10:00.747   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.747   Dest file exists.
+2026-06-11 14:10:00.747   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.747   Installing the file.
+2026-06-11 14:10:00.749   Successfully installed the file.
+2026-06-11 14:10:00.750   -- File entry --
+2026-06-11 14:10:00.750   Dest filename: D:\LinRongPet\_internal\assets\frames\running-left-07.webp
+2026-06-11 14:10:00.750   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.750   Dest file exists.
+2026-06-11 14:10:00.750   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.750   Installing the file.
+2026-06-11 14:10:00.752   Successfully installed the file.
+2026-06-11 14:10:00.752   -- File entry --
+2026-06-11 14:10:00.752   Dest filename: D:\LinRongPet\_internal\assets\frames\running-right-00.webp
+2026-06-11 14:10:00.753   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.753   Dest file exists.
+2026-06-11 14:10:00.753   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.753   Installing the file.
+2026-06-11 14:10:00.755   Successfully installed the file.
+2026-06-11 14:10:00.755   -- File entry --
+2026-06-11 14:10:00.755   Dest filename: D:\LinRongPet\_internal\assets\frames\running-right-01.webp
+2026-06-11 14:10:00.755   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.755   Dest file exists.
+2026-06-11 14:10:00.755   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.755   Installing the file.
+2026-06-11 14:10:00.758   Successfully installed the file.
+2026-06-11 14:10:00.758   -- File entry --
+2026-06-11 14:10:00.758   Dest filename: D:\LinRongPet\_internal\assets\frames\running-right-02.webp
+2026-06-11 14:10:00.758   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.758   Dest file exists.
+2026-06-11 14:10:00.758   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.758   Installing the file.
+2026-06-11 14:10:00.760   Successfully installed the file.
+2026-06-11 14:10:00.761   -- File entry --
+2026-06-11 14:10:00.761   Dest filename: D:\LinRongPet\_internal\assets\frames\running-right-03.webp
+2026-06-11 14:10:00.761   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.761   Dest file exists.
+2026-06-11 14:10:00.761   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.761   Installing the file.
+2026-06-11 14:10:00.763   Successfully installed the file.
+2026-06-11 14:10:00.763   -- File entry --
+2026-06-11 14:10:00.763   Dest filename: D:\LinRongPet\_internal\assets\frames\running-right-04.webp
+2026-06-11 14:10:00.763   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.763   Dest file exists.
+2026-06-11 14:10:00.764   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.764   Installing the file.
+2026-06-11 14:10:00.766   Successfully installed the file.
+2026-06-11 14:10:00.766   -- File entry --
+2026-06-11 14:10:00.766   Dest filename: D:\LinRongPet\_internal\assets\frames\running-right-05.webp
+2026-06-11 14:10:00.767   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.767   Dest file exists.
+2026-06-11 14:10:00.767   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.767   Installing the file.
+2026-06-11 14:10:00.769   Successfully installed the file.
+2026-06-11 14:10:00.769   -- File entry --
+2026-06-11 14:10:00.770   Dest filename: D:\LinRongPet\_internal\assets\frames\running-right-06.webp
+2026-06-11 14:10:00.770   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.770   Dest file exists.
+2026-06-11 14:10:00.770   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.770   Installing the file.
+2026-06-11 14:10:00.772   Successfully installed the file.
+2026-06-11 14:10:00.772   -- File entry --
+2026-06-11 14:10:00.773   Dest filename: D:\LinRongPet\_internal\assets\frames\running-right-07.webp
+2026-06-11 14:10:00.773   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.773   Dest file exists.
+2026-06-11 14:10:00.773   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.773   Installing the file.
+2026-06-11 14:10:00.775   Successfully installed the file.
+2026-06-11 14:10:00.775   -- File entry --
+2026-06-11 14:10:00.775   Dest filename: D:\LinRongPet\_internal\assets\frames\waiting-00.webp
+2026-06-11 14:10:00.776   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.776   Dest file exists.
+2026-06-11 14:10:00.776   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.776   Installing the file.
+2026-06-11 14:10:00.778   Successfully installed the file.
+2026-06-11 14:10:00.778   -- File entry --
+2026-06-11 14:10:00.779   Dest filename: D:\LinRongPet\_internal\assets\frames\waiting-01.webp
+2026-06-11 14:10:00.779   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.779   Dest file exists.
+2026-06-11 14:10:00.779   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.779   Installing the file.
+2026-06-11 14:10:00.784   Successfully installed the file.
+2026-06-11 14:10:00.784   -- File entry --
+2026-06-11 14:10:00.784   Dest filename: D:\LinRongPet\_internal\assets\frames\waiting-02.webp
+2026-06-11 14:10:00.784   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.784   Dest file exists.
+2026-06-11 14:10:00.784   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.784   Installing the file.
+2026-06-11 14:10:00.786   Successfully installed the file.
+2026-06-11 14:10:00.787   -- File entry --
+2026-06-11 14:10:00.787   Dest filename: D:\LinRongPet\_internal\assets\frames\waiting-03.webp
+2026-06-11 14:10:00.787   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.787   Dest file exists.
+2026-06-11 14:10:00.787   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.787   Installing the file.
+2026-06-11 14:10:00.790   Successfully installed the file.
+2026-06-11 14:10:00.790   -- File entry --
+2026-06-11 14:10:00.790   Dest filename: D:\LinRongPet\_internal\assets\frames\waiting-04.webp
+2026-06-11 14:10:00.790   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.790   Dest file exists.
+2026-06-11 14:10:00.790   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.790   Installing the file.
+2026-06-11 14:10:00.792   Successfully installed the file.
+2026-06-11 14:10:00.792   -- File entry --
+2026-06-11 14:10:00.793   Dest filename: D:\LinRongPet\_internal\assets\frames\waiting-05.webp
+2026-06-11 14:10:00.793   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.793   Dest file exists.
+2026-06-11 14:10:00.793   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.793   Installing the file.
+2026-06-11 14:10:00.795   Successfully installed the file.
+2026-06-11 14:10:00.795   -- File entry --
+2026-06-11 14:10:00.795   Dest filename: D:\LinRongPet\_internal\assets\frames\waving-00.webp
+2026-06-11 14:10:00.796   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.796   Dest file exists.
+2026-06-11 14:10:00.796   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.796   Installing the file.
+2026-06-11 14:10:00.799   Successfully installed the file.
+2026-06-11 14:10:00.799   -- File entry --
+2026-06-11 14:10:00.799   Dest filename: D:\LinRongPet\_internal\assets\frames\waving-01.webp
+2026-06-11 14:10:00.799   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.799   Dest file exists.
+2026-06-11 14:10:00.799   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.799   Installing the file.
+2026-06-11 14:10:00.802   Successfully installed the file.
+2026-06-11 14:10:00.802   -- File entry --
+2026-06-11 14:10:00.802   Dest filename: D:\LinRongPet\_internal\assets\frames\waving-02.webp
+2026-06-11 14:10:00.802   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.802   Dest file exists.
+2026-06-11 14:10:00.803   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.803   Installing the file.
+2026-06-11 14:10:00.805   Successfully installed the file.
+2026-06-11 14:10:00.805   -- File entry --
+2026-06-11 14:10:00.805   Dest filename: D:\LinRongPet\_internal\assets\frames\waving-03.webp
+2026-06-11 14:10:00.805   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.805   Dest file exists.
+2026-06-11 14:10:00.805   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.806   Installing the file.
+2026-06-11 14:10:00.809   Successfully installed the file.
+2026-06-11 14:10:00.809   -- File entry --
+2026-06-11 14:10:00.809   Dest filename: D:\LinRongPet\_internal\PySide6\MSVCP140.dll
+2026-06-11 14:10:00.809   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.809   Dest file exists.
+2026-06-11 14:10:00.809   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.809   Installing the file.
+2026-06-11 14:10:00.824   Successfully installed the file.
+2026-06-11 14:10:00.824   -- File entry --
+2026-06-11 14:10:00.825   Dest filename: D:\LinRongPet\_internal\PySide6\MSVCP140_1.dll
+2026-06-11 14:10:00.825   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.825   Dest file exists.
+2026-06-11 14:10:00.825   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.825   Installing the file.
+2026-06-11 14:10:00.827   Successfully installed the file.
+2026-06-11 14:10:00.828   -- File entry --
+2026-06-11 14:10:00.828   Dest filename: D:\LinRongPet\_internal\PySide6\MSVCP140_2.dll
+2026-06-11 14:10:00.828   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.828   Dest file exists.
+2026-06-11 14:10:00.828   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.828   Installing the file.
+2026-06-11 14:10:00.837   Successfully installed the file.
+2026-06-11 14:10:00.837   -- File entry --
+2026-06-11 14:10:00.837   Dest filename: D:\LinRongPet\_internal\PySide6\opengl32sw.dll
+2026-06-11 14:10:00.837   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.837   Dest file exists.
+2026-06-11 14:10:00.837   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:00.837   Installing the file.
+2026-06-11 14:10:01.335   Successfully installed the file.
+2026-06-11 14:10:01.335   -- File entry --
+2026-06-11 14:10:01.335   Dest filename: D:\LinRongPet\_internal\PySide6\pyside6.abi3.dll
+2026-06-11 14:10:01.335   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.336   Dest file exists.
+2026-06-11 14:10:01.336   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.336   Installing the file.
+2026-06-11 14:10:01.347   Successfully installed the file.
+2026-06-11 14:10:01.347   -- File entry --
+2026-06-11 14:10:01.347   Dest filename: D:\LinRongPet\_internal\PySide6\Qt6Core.dll
+2026-06-11 14:10:01.347   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.347   Dest file exists.
+2026-06-11 14:10:01.347   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.347   Installing the file.
+2026-06-11 14:10:01.594   Successfully installed the file.
+2026-06-11 14:10:01.594   -- File entry --
+2026-06-11 14:10:01.594   Dest filename: D:\LinRongPet\_internal\PySide6\Qt6Gui.dll
+2026-06-11 14:10:01.594   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.594   Dest file exists.
+2026-06-11 14:10:01.594   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.594   Installing the file.
+2026-06-11 14:10:01.862   Successfully installed the file.
+2026-06-11 14:10:01.862   -- File entry --
+2026-06-11 14:10:01.862   Dest filename: D:\LinRongPet\_internal\PySide6\Qt6Network.dll
+2026-06-11 14:10:01.862   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.862   Dest file exists.
+2026-06-11 14:10:01.862   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.862   Installing the file.
+2026-06-11 14:10:01.910   Successfully installed the file.
+2026-06-11 14:10:01.910   -- File entry --
+2026-06-11 14:10:01.910   Dest filename: D:\LinRongPet\_internal\PySide6\Qt6OpenGL.dll
+2026-06-11 14:10:01.910   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.910   Dest file exists.
+2026-06-11 14:10:01.910   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.910   Installing the file.
+2026-06-11 14:10:01.944   Successfully installed the file.
+2026-06-11 14:10:01.944   -- File entry --
+2026-06-11 14:10:01.944   Dest filename: D:\LinRongPet\_internal\PySide6\Qt6Svg.dll
+2026-06-11 14:10:01.944   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.944   Dest file exists.
+2026-06-11 14:10:01.944   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.944   Installing the file.
+2026-06-11 14:10:01.962   Successfully installed the file.
+2026-06-11 14:10:01.962   -- File entry --
+2026-06-11 14:10:01.962   Dest filename: D:\LinRongPet\_internal\PySide6\Qt6Widgets.dll
+2026-06-11 14:10:01.962   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.962   Dest file exists.
+2026-06-11 14:10:01.962   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:01.962   Installing the file.
+2026-06-11 14:10:02.141   Successfully installed the file.
+2026-06-11 14:10:02.142   -- File entry --
+2026-06-11 14:10:02.142   Dest filename: D:\LinRongPet\_internal\PySide6\QtCore.pyd
+2026-06-11 14:10:02.142   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.142   Dest file exists.
+2026-06-11 14:10:02.142   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.142   Installing the file.
+2026-06-11 14:10:02.220   Successfully installed the file.
+2026-06-11 14:10:02.220   -- File entry --
+2026-06-11 14:10:02.220   Dest filename: D:\LinRongPet\_internal\PySide6\QtGui.pyd
+2026-06-11 14:10:02.220   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.220   Dest file exists.
+2026-06-11 14:10:02.220   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.220   Installing the file.
+2026-06-11 14:10:02.304   Successfully installed the file.
+2026-06-11 14:10:02.304   -- File entry --
+2026-06-11 14:10:02.304   Dest filename: D:\LinRongPet\_internal\PySide6\QtNetwork.pyd
+2026-06-11 14:10:02.304   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.304   Dest file exists.
+2026-06-11 14:10:02.304   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.304   Installing the file.
+2026-06-11 14:10:02.327   Successfully installed the file.
+2026-06-11 14:10:02.327   -- File entry --
+2026-06-11 14:10:02.327   Dest filename: D:\LinRongPet\_internal\PySide6\QtWidgets.pyd
+2026-06-11 14:10:02.327   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.328   Dest file exists.
+2026-06-11 14:10:02.328   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.328   Installing the file.
+2026-06-11 14:10:02.429   Successfully installed the file.
+2026-06-11 14:10:02.430   -- File entry --
+2026-06-11 14:10:02.430   Dest filename: D:\LinRongPet\_internal\PySide6\VCRUNTIME140.dll
+2026-06-11 14:10:02.430   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.430   Dest file exists.
+2026-06-11 14:10:02.430   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.430   Installing the file.
+2026-06-11 14:10:02.435   Successfully installed the file.
+2026-06-11 14:10:02.435   -- File entry --
+2026-06-11 14:10:02.435   Dest filename: D:\LinRongPet\_internal\PySide6\VCRUNTIME140_1.dll
+2026-06-11 14:10:02.436   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.436   Dest file exists.
+2026-06-11 14:10:02.436   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.436   Installing the file.
+2026-06-11 14:10:02.438   Successfully installed the file.
+2026-06-11 14:10:02.438   -- File entry --
+2026-06-11 14:10:02.439   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\generic\qtuiotouchplugin.dll
+2026-06-11 14:10:02.439   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.439   Dest file exists.
+2026-06-11 14:10:02.439   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.439   Installing the file.
+2026-06-11 14:10:02.444   Successfully installed the file.
+2026-06-11 14:10:02.444   -- File entry --
+2026-06-11 14:10:02.444   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\iconengines\qsvgicon.dll
+2026-06-11 14:10:02.445   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.445   Dest file exists.
+2026-06-11 14:10:02.445   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.445   Installing the file.
+2026-06-11 14:10:02.448   Successfully installed the file.
+2026-06-11 14:10:02.448   -- File entry --
+2026-06-11 14:10:02.448   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qgif.dll
+2026-06-11 14:10:02.448   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.448   Dest file exists.
+2026-06-11 14:10:02.448   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.449   Installing the file.
+2026-06-11 14:10:02.452   Successfully installed the file.
+2026-06-11 14:10:02.452   -- File entry --
+2026-06-11 14:10:02.452   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qicns.dll
+2026-06-11 14:10:02.453   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.453   Dest file exists.
+2026-06-11 14:10:02.453   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.453   Installing the file.
+2026-06-11 14:10:02.456   Successfully installed the file.
+2026-06-11 14:10:02.456   -- File entry --
+2026-06-11 14:10:02.456   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qico.dll
+2026-06-11 14:10:02.456   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.456   Dest file exists.
+2026-06-11 14:10:02.456   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.456   Installing the file.
+2026-06-11 14:10:02.460   Successfully installed the file.
+2026-06-11 14:10:02.460   -- File entry --
+2026-06-11 14:10:02.460   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qjpeg.dll
+2026-06-11 14:10:02.461   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.461   Dest file exists.
+2026-06-11 14:10:02.461   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.461   Installing the file.
+2026-06-11 14:10:02.477   Successfully installed the file.
+2026-06-11 14:10:02.477   -- File entry --
+2026-06-11 14:10:02.477   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qsvg.dll
+2026-06-11 14:10:02.478   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.478   Dest file exists.
+2026-06-11 14:10:02.478   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.478   Installing the file.
+2026-06-11 14:10:02.482   Successfully installed the file.
+2026-06-11 14:10:02.482   -- File entry --
+2026-06-11 14:10:02.482   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qtga.dll
+2026-06-11 14:10:02.483   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.483   Dest file exists.
+2026-06-11 14:10:02.483   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.483   Installing the file.
+2026-06-11 14:10:02.486   Successfully installed the file.
+2026-06-11 14:10:02.486   -- File entry --
+2026-06-11 14:10:02.486   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qtiff.dll
+2026-06-11 14:10:02.487   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.487   Dest file exists.
+2026-06-11 14:10:02.487   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.487   Installing the file.
+2026-06-11 14:10:02.500   Successfully installed the file.
+2026-06-11 14:10:02.501   -- File entry --
+2026-06-11 14:10:02.501   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qwbmp.dll
+2026-06-11 14:10:02.501   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.501   Dest file exists.
+2026-06-11 14:10:02.501   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.501   Installing the file.
+2026-06-11 14:10:02.504   Successfully installed the file.
+2026-06-11 14:10:02.504   -- File entry --
+2026-06-11 14:10:02.504   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\imageformats\qwebp.dll
+2026-06-11 14:10:02.504   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.505   Dest file exists.
+2026-06-11 14:10:02.505   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.505   Installing the file.
+2026-06-11 14:10:02.523   Successfully installed the file.
+2026-06-11 14:10:02.523   -- File entry --
+2026-06-11 14:10:02.523   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\networkinformation\qnetworklistmanager.dll
+2026-06-11 14:10:02.523   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.523   Dest file exists.
+2026-06-11 14:10:02.523   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.523   Installing the file.
+2026-06-11 14:10:02.527   Successfully installed the file.
+2026-06-11 14:10:02.527   -- File entry --
+2026-06-11 14:10:02.527   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\platforms\qwindows.dll
+2026-06-11 14:10:02.527   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.527   Dest file exists.
+2026-06-11 14:10:02.527   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.527   Installing the file.
+2026-06-11 14:10:02.554   Successfully installed the file.
+2026-06-11 14:10:02.554   -- File entry --
+2026-06-11 14:10:02.554   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\styles\qmodernwindowsstyle.dll
+2026-06-11 14:10:02.554   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.554   Dest file exists.
+2026-06-11 14:10:02.554   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.554   Installing the file.
+2026-06-11 14:10:02.561   Successfully installed the file.
+2026-06-11 14:10:02.561   -- File entry --
+2026-06-11 14:10:02.562   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\tls\qcertonlybackend.dll
+2026-06-11 14:10:02.562   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.562   Dest file exists.
+2026-06-11 14:10:02.562   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.562   Installing the file.
+2026-06-11 14:10:02.566   Successfully installed the file.
+2026-06-11 14:10:02.566   -- File entry --
+2026-06-11 14:10:02.566   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\tls\qopensslbackend.dll
+2026-06-11 14:10:02.567   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.567   Dest file exists.
+2026-06-11 14:10:02.567   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.567   Installing the file.
+2026-06-11 14:10:02.575   Successfully installed the file.
+2026-06-11 14:10:02.576   -- File entry --
+2026-06-11 14:10:02.576   Dest filename: D:\LinRongPet\_internal\PySide6\plugins\tls\qschannelbackend.dll
+2026-06-11 14:10:02.576   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.576   Dest file exists.
+2026-06-11 14:10:02.576   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.576   Installing the file.
+2026-06-11 14:10:02.584   Successfully installed the file.
+2026-06-11 14:10:02.584   -- File entry --
+2026-06-11 14:10:02.584   Dest filename: D:\LinRongPet\_internal\shiboken6\MSVCP140.dll
+2026-06-11 14:10:02.584   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.584   Dest file exists.
+2026-06-11 14:10:02.585   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.585   Installing the file.
+2026-06-11 14:10:02.599   Successfully installed the file.
+2026-06-11 14:10:02.599   -- File entry --
+2026-06-11 14:10:02.599   Dest filename: D:\LinRongPet\_internal\shiboken6\Shiboken.pyd
+2026-06-11 14:10:02.600   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.600   Dest file exists.
+2026-06-11 14:10:02.600   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.600   Installing the file.
+2026-06-11 14:10:02.603   Successfully installed the file.
+2026-06-11 14:10:02.603   -- File entry --
+2026-06-11 14:10:02.603   Dest filename: D:\LinRongPet\_internal\shiboken6\shiboken6.abi3.dll
+2026-06-11 14:10:02.603   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.603   Dest file exists.
+2026-06-11 14:10:02.603   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.603   Installing the file.
+2026-06-11 14:10:02.616   Successfully installed the file.
+2026-06-11 14:10:02.616   -- File entry --
+2026-06-11 14:10:02.616   Dest filename: D:\LinRongPet\_internal\shiboken6\VCRUNTIME140.dll
+2026-06-11 14:10:02.617   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.617   Dest file exists.
+2026-06-11 14:10:02.617   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.617   Installing the file.
+2026-06-11 14:10:02.621   Successfully installed the file.
+2026-06-11 14:10:02.621   -- File entry --
+2026-06-11 14:10:02.621   Dest filename: D:\LinRongPet\_internal\shiboken6\VCRUNTIME140_1.dll
+2026-06-11 14:10:02.621   Time stamp of our file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.621   Dest file exists.
+2026-06-11 14:10:02.621   Time stamp of existing file: 2026-06-11 14:08:24.000
+2026-06-11 14:10:02.621   Installing the file.
+2026-06-11 14:10:02.623   Successfully installed the file.
+2026-06-11 14:10:02.624   -- Icon entry --
+2026-06-11 14:10:02.624   Dest filename: C:\Users\altairhuang\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\林榕桌宠\林榕桌宠.lnk
+2026-06-11 14:10:02.654   Creating the icon.
+2026-06-11 14:10:02.732   Successfully created the icon.
+2026-06-11 14:10:02.749   -- Icon entry --
+2026-06-11 14:10:02.749   Dest filename: C:\Users\altairhuang\Desktop\林榕桌宠.lnk
+2026-06-11 14:10:02.774   Creating the icon.
+2026-06-11 14:10:02.809   Successfully created the icon.
+2026-06-11 14:10:02.853   Saving uninstall information.
+2026-06-11 14:10:02.853   Renaming uninstaller.
+2026-06-11 14:10:02.855   Deleting uninstall key left over from previous non administrative install.
+2026-06-11 14:10:02.856   Creating new uninstall key: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\{63B0134A-4A66-48C7-9851-1EC0050F131B}_is1
+2026-06-11 14:10:02.856   Writing uninstall key values.
+2026-06-11 14:10:02.859   Detected previous administrative 64-bit install? No
+2026-06-11 14:10:02.859   Detected previous administrative 32-bit install? No
+2026-06-11 14:10:02.865   Installation process succeeded.
+2026-06-11 14:10:02.866   Need to restart Windows? No
+2026-06-11 14:10:02.872   Deinitializing Setup.
+2026-06-11 14:10:02.881   Log closed.

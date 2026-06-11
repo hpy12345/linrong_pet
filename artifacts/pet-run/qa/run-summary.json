@@ -1,0 +1,10 @@
+{
+    "ok":  true,
+    "run_dir":  "D:\\linrong\\artifacts\\pet-run",
+    "spritesheet":  "D:\\linrong\\artifacts\\pet-run\\final\\spritesheet.webp",
+    "validation":  "D:\\linrong\\artifacts\\pet-run\\final\\validation.json",
+    "contact_sheet":  "D:\\linrong\\artifacts\\pet-run\\qa\\contact-sheet.png",
+    "review":  "D:\\linrong\\artifacts\\pet-run\\qa\\review.json",
+    "package":  "C:\\Users\\altairhuang\\.codex\\pets\\linrong",
+    "visual_qa":  "pass"
+}
