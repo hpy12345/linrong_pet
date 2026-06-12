@@ -110,6 +110,74 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
     if sitting_widths and max(sitting_widths) > min(sitting_widths) * 1.25:
         errors.append("sitting character scale changes excessively")
 
+    idle_bounds = [
+        frame.getchannel("A").getbbox()
+        for frame in state_frames["idle"]
+    ]
+    idle_heights = [
+        bounds[3] - bounds[1]
+        for bounds in idle_bounds
+        if bounds is not None
+    ]
+    sitting_bounds = [
+        frame.getchannel("A").getbbox()
+        for frame in state_frames["sitting"]
+    ]
+    if idle_heights and sitting_bounds[0] is not None:
+        idle_height = float(np.median(idle_heights))
+        sitting_first_height = sitting_bounds[0][3] - sitting_bounds[0][1]
+        if (
+            idle_height > cell_height * 0.5
+            and abs(sitting_first_height - idle_height) / idle_height > 0.02
+        ):
+            errors.append("sitting first frame scale does not match idle")
+
+    production_sitting = [
+        bounds for bounds in sitting_bounds if bounds is not None
+    ]
+    if (
+        idle_heights
+        and float(np.median(idle_heights)) > cell_height * 0.5
+        and production_sitting
+    ):
+        baselines = [bounds[3] for bounds in production_sitting]
+        if max(baselines) - min(baselines) > 2:
+            errors.append("sitting baseline changes between frames")
+        head_widths = [
+            _head_width(frame, bounds, round(float(np.median(idle_heights))))
+            for frame, bounds in zip(
+                state_frames["sitting"],
+                sitting_bounds,
+                strict=True,
+            )
+            if bounds is not None
+        ]
+        if (
+            head_widths
+            and min(head_widths) > 0
+            and max(head_widths) > min(head_widths) * 1.18
+        ):
+            errors.append("sitting face scale changes excessively")
+
+    idle_hair_widths = [
+        _dark_head_width(frame)
+        for frame in state_frames["idle"]
+    ]
+    jumping_hair_widths = [
+        _dark_head_width(frame)
+        for frame in state_frames["jumping"]
+    ]
+    if (
+        min(idle_hair_widths, default=0) > 0
+        and min(jumping_hair_widths, default=0) > 0
+    ):
+        idle_hair_width = float(np.median(idle_hair_widths))
+        jumping_hair_width = float(np.median(jumping_hair_widths))
+        if abs(jumping_hair_width - idle_hair_width) / idle_hair_width > 0.15:
+            errors.append("jumping face scale does not match idle")
+        if max(jumping_hair_widths) > min(jumping_hair_widths) * 1.18:
+            errors.append("jumping face scale changes excessively")
+
     pixels = np.asarray(rgba, dtype=np.uint8)
     alpha = pixels[..., 3]
     cast = suspicious_edge_color(pixels[..., :3]) & (alpha > 0)
@@ -118,12 +186,63 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
     return errors
 
 
+def _head_width(
+    frame: Image.Image,
+    bounds: tuple[int, int, int, int],
+    reference_height: int,
+) -> int:
+    alpha = np.asarray(frame.getchannel("A"), dtype=np.uint8)
+    left, top, right, _bottom = bounds
+    sample_bottom = min(alpha.shape[0], top + round(reference_height * 0.22))
+    region = alpha[top:sample_bottom, left:right] > 16
+    columns = np.where(region.any(axis=0))[0]
+    if columns.size == 0:
+        return 0
+    return int(columns[-1] - columns[0] + 1)
+
+
+def _dark_head_width(frame: Image.Image) -> int:
+    bounds = frame.getchannel("A").getbbox()
+    if bounds is None:
+        return 0
+    crop = np.asarray(frame.crop(bounds).convert("RGBA"), dtype=np.uint8)
+    sample_height = min(
+        crop.shape[0],
+        max(1, round(crop.shape[1] * 0.42)),
+    )
+    sample = crop[:sample_height]
+    dark_hair = (
+        (sample[..., :3].mean(axis=2) < 90)
+        & (sample[..., 3] > 128)
+    )
+    columns = np.where(dark_hair.any(axis=0))[0]
+    if columns.size == 0:
+        return 0
+    return int(columns[-1] - columns[0] + 1)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--animation", type=Path, required=True)
     parser.add_argument("--spritesheet", type=Path, required=True)
+    parser.add_argument("--json-out", type=Path)
     args = parser.parse_args()
     errors = validate(args.animation, args.spritesheet)
+    if args.json_out:
+        with Image.open(args.spritesheet) as image:
+            atlas_size = image.size
+        report = {
+            "ok": not errors,
+            "animation": str(args.animation),
+            "spritesheet": str(args.spritesheet),
+            "atlas_size": list(atlas_size),
+            "errors": errors,
+        }
+        args.json_out.parent.mkdir(parents=True, exist_ok=True)
+        args.json_out.write_text(
+            json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     if errors:
         print("\n".join(errors))
         return 1

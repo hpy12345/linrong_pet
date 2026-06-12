@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import argparse
+import filecmp
 import json
+import os
+import time
 from pathlib import Path
 
 from PIL import Image
@@ -9,6 +12,33 @@ from PIL import Image
 
 def frame_filename(state_name: str, index: int) -> str:
     return f"{state_name}-{index:02d}.webp"
+
+
+def _save_frame(frame: Image.Image, destination: Path) -> None:
+    temporary = destination.with_name(f".{destination.name}.tmp")
+    try:
+        frame.save(
+            temporary,
+            format="WEBP",
+            lossless=True,
+            method=6,
+        )
+        if destination.exists() and filecmp.cmp(
+            temporary,
+            destination,
+            shallow=False,
+        ):
+            return
+        for attempt in range(5):
+            try:
+                os.replace(temporary, destination)
+                return
+            except OSError:
+                if attempt == 4:
+                    raise
+                time.sleep(0.05 * (attempt + 1))
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def export_frames(
@@ -38,12 +68,7 @@ def export_frames(
                         (row + 1) * cell_height,
                     )
                 )
-                frame.save(
-                    output_dir / filename,
-                    format="WEBP",
-                    lossless=True,
-                    method=6,
-                )
+                _save_frame(frame, output_dir / filename)
 
     for path in output_dir.glob("*.webp"):
         if path.name not in expected:

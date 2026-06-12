@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "reference": "../../role.png",
+  "canonical_base": "canonical-base-transparent.png",
+  "atlas": {
+    "columns": 8,
+    "rows": 9,
+    "cell_width": 384,
+    "cell_height": 416
+  },
+  "baseline": 407,
+  "states": {
+    "idle": {
+      "row": 0,
+      "frames": 6,
+      "source": "idle-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "walking-right": {
+      "row": 1,
+      "frames": 8,
+      "source": "walking-right-transparent.png",
+      "target_first_frame_height": 382,
+      "max_width_ratio": 0.92
+    },
+    "walking-left": {
+      "row": 2,
+      "frames": 8,
+      "mirror_of": "walking-right",
+      "target_first_frame_height": 382
+    },
+    "waving": {
+      "row": 3,
+      "frames": 4,
+      "source": "waving-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "jumping": {
+      "row": 4,
+      "frames": 5,
+      "frame_sources": [
+        "jumping-stable/frame-00.png",
+        "jumping-stable/frame-01.png",
+        "jumping-stable/frame-02.png",
+        "jumping-stable/frame-03.png",
+        "jumping-stable/frame-04.png"
+      ],
+      "frame_source_scales": [
+        1.0,
+        1.135593,
+        1.098361,
+        1.135593,
+        1.0
+      ],
+      "frame_baseline_offsets": [
+        0,
+        0,
+        -85,
+        -40,
+        0
+      ],
+      "target_head_width": 47,
+      "target_first_frame_height": 398,
+      "max_width_ratio": 0.92
+    },
+    "sitting": {
+      "row": 5,
+      "frames": 8,
+      "source": "sitting-transparent.png",
+      "frame_source_scales": [
+        1.0,
+        1.135593,
+        1.098361,
+        1.098361,
+        1.098361,
+        1.116667,
+        1.116667,
+        1.098361
+      ],
+      "target_first_frame_height": 398,
+      "scale_reference": "idle",
+      "first_frame_from": "idle"
+    },
+    "waiting": {
+      "row": 6,
+      "frames": 6,
+      "source": "waiting-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "running": {
+      "row": 7,
+      "frames": 6,
+      "source": "running-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "review": {
+      "row": 8,
+      "frames": 6,
+      "source": "review-transparent.png",
+      "target_first_frame_height": 398
+    }
+  }
+}

@@ -1,5 +1,5 @@
 #define MyAppName "林榕桌宠"
-#define MyAppVersion "1.3.0"
+#define MyAppVersion "1.4.2"
 #define MyAppPublisher "LinRongPet"
 #define MyAppExeName "LinRongPet.exe"
 
@@ -12,7 +12,7 @@ DefaultDirName={localappdata}\Programs\LinRongPet
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 OutputDir=..\output
-OutputBaseFilename=LinRongPet-Setup-1.3.0
+OutputBaseFilename=LinRongPet-Setup-{#MyAppVersion}
 SetupIconFile=..\src\linrong_pet\assets\linrong.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 Compression=lzma2/max

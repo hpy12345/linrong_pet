@@ -10,7 +10,7 @@
     "idle": {
       "row": 0,
       "frames": 6,
-      "durations_ms": [280, 110, 110, 140, 140, 320],
+      "durations_ms": [5650, 75, 55, 50, 60, 90],
       "loop": true
     },
     "walking-right": {

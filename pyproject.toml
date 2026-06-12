@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "linrong-pet"
-version = "1.3.0"
+version = "1.4.2"
 description = "林榕 Windows 桌面宠物"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
@@ -19,6 +19,7 @@ build = [
   "numpy==2.4.6",
   "Pillow==11.3.0",
   "PyInstaller==6.20.0",
+  "pywin32==312; sys_platform == 'win32'",
 ]
 test = [
   "pytest==8.4.2",

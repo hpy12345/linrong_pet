@@ -1,0 +1,859 @@
+﻿2026-06-12 15:49:39.305   Log opened. (Time zone: UTC+08:00)
+2026-06-12 15:49:39.305   Setup version: Inno Setup version 6.7.3
+2026-06-12 15:49:39.305   Original Setup EXE: D:\linrong_pet\output\LinRongPet-Setup-1.4.1.exe
+2026-06-12 15:49:39.305   Setup command line: /SL5="$24E0898,30422609,879616,D:\linrong_pet\output\LinRongPet-Setup-1.4.1.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /DIR=D:\linrong_pet\build\installer-smoke-v1.4.1\app /LOG=D:\linrong_pet\build\installer-smoke-v1.4.1\install.log 
+2026-06-12 15:49:39.305   Windows version: 10.0.26100
+2026-06-12 15:49:39.305   Windows architecture: x64 (64-bit)
+2026-06-12 15:49:39.305   Machine types supported by system: x86 x64
+2026-06-12 15:49:39.305   User privileges: Administrative
+2026-06-12 15:49:39.310   Administrative install mode: No
+2026-06-12 15:49:39.310   Install mode root key: HKEY_CURRENT_USER
+2026-06-12 15:49:39.310   64-bit install mode: Yes
+2026-06-12 15:49:39.310   RedirectionGuard status for current process: Enabled in enforcing mode
+2026-06-12 15:49:39.313   Created protected temporary directory: C:\Users\ALTAIR~1\AppData\Local\Temp\is-CH486MDRVE.tmp
+2026-06-12 15:49:39.483   Found 80 files to register with RestartManager.
+2026-06-12 15:49:39.484   Calling RestartManager's RmGetList.
+2026-06-12 15:49:39.508   RmGetList finished successfully.
+2026-06-12 15:49:39.508   RestartManager found no applications using one of our files.
+2026-06-12 15:49:39.517   Starting the installation process.
+2026-06-12 15:49:39.521   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app
+2026-06-12 15:49:39.521   Directory for uninstall files: D:\linrong_pet\build\installer-smoke-v1.4.1\app
+2026-06-12 15:49:39.522   Creating new uninstall log: D:\linrong_pet\build\installer-smoke-v1.4.1\app\unins000.dat
+2026-06-12 15:49:39.529   -- File entry --
+2026-06-12 15:49:39.530   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\unins000.exe
+2026-06-12 15:49:39.530   Non-default bitness: 32-bit
+2026-06-12 15:49:39.534   Time stamp of our file: 2026-06-12 15:49:38.724
+2026-06-12 15:49:39.534   Installing the file.
+2026-06-12 15:49:39.559   Successfully installed the file.
+2026-06-12 15:49:39.560   -- File entry --
+2026-06-12 15:49:39.560   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\LinRongPet.exe
+2026-06-12 15:49:39.560   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.560   Installing the file.
+2026-06-12 15:49:39.597   Successfully installed the file.
+2026-06-12 15:49:39.597   -- File entry --
+2026-06-12 15:49:39.597   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-console-l1-1-0.dll
+2026-06-12 15:49:39.598   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.598   Installing the file.
+2026-06-12 15:49:39.598   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal
+2026-06-12 15:49:39.602   Successfully installed the file.
+2026-06-12 15:49:39.602   -- File entry --
+2026-06-12 15:49:39.602   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-datetime-l1-1-0.dll
+2026-06-12 15:49:39.602   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.602   Installing the file.
+2026-06-12 15:49:39.605   Successfully installed the file.
+2026-06-12 15:49:39.605   -- File entry --
+2026-06-12 15:49:39.606   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-debug-l1-1-0.dll
+2026-06-12 15:49:39.606   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.606   Installing the file.
+2026-06-12 15:49:39.609   Successfully installed the file.
+2026-06-12 15:49:39.609   -- File entry --
+2026-06-12 15:49:39.609   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-errorhandling-l1-1-0.dll
+2026-06-12 15:49:39.610   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.610   Installing the file.
+2026-06-12 15:49:39.613   Successfully installed the file.
+2026-06-12 15:49:39.613   -- File entry --
+2026-06-12 15:49:39.613   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-file-l1-1-0.dll
+2026-06-12 15:49:39.613   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.613   Installing the file.
+2026-06-12 15:49:39.617   Successfully installed the file.
+2026-06-12 15:49:39.617   -- File entry --
+2026-06-12 15:49:39.617   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-file-l1-2-0.dll
+2026-06-12 15:49:39.617   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.617   Installing the file.
+2026-06-12 15:49:39.620   Successfully installed the file.
+2026-06-12 15:49:39.620   -- File entry --
+2026-06-12 15:49:39.620   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-file-l2-1-0.dll
+2026-06-12 15:49:39.621   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.621   Installing the file.
+2026-06-12 15:49:39.624   Successfully installed the file.
+2026-06-12 15:49:39.624   -- File entry --
+2026-06-12 15:49:39.624   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-handle-l1-1-0.dll
+2026-06-12 15:49:39.625   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.625   Installing the file.
+2026-06-12 15:49:39.632   Successfully installed the file.
+2026-06-12 15:49:39.632   -- File entry --
+2026-06-12 15:49:39.632   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-heap-l1-1-0.dll
+2026-06-12 15:49:39.633   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.633   Installing the file.
+2026-06-12 15:49:39.635   Successfully installed the file.
+2026-06-12 15:49:39.635   -- File entry --
+2026-06-12 15:49:39.636   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-interlocked-l1-1-0.dll
+2026-06-12 15:49:39.636   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.636   Installing the file.
+2026-06-12 15:49:39.640   Successfully installed the file.
+2026-06-12 15:49:39.641   -- File entry --
+2026-06-12 15:49:39.641   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-libraryloader-l1-1-0.dll
+2026-06-12 15:49:39.641   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.641   Installing the file.
+2026-06-12 15:49:39.646   Successfully installed the file.
+2026-06-12 15:49:39.646   -- File entry --
+2026-06-12 15:49:39.646   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-localization-l1-2-0.dll
+2026-06-12 15:49:39.647   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.647   Installing the file.
+2026-06-12 15:49:39.650   Successfully installed the file.
+2026-06-12 15:49:39.650   -- File entry --
+2026-06-12 15:49:39.650   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-memory-l1-1-0.dll
+2026-06-12 15:49:39.650   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.650   Installing the file.
+2026-06-12 15:49:39.653   Successfully installed the file.
+2026-06-12 15:49:39.653   -- File entry --
+2026-06-12 15:49:39.653   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-namedpipe-l1-1-0.dll
+2026-06-12 15:49:39.654   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.654   Installing the file.
+2026-06-12 15:49:39.658   Successfully installed the file.
+2026-06-12 15:49:39.658   -- File entry --
+2026-06-12 15:49:39.659   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-processenvironment-l1-1-0.dll
+2026-06-12 15:49:39.659   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.659   Installing the file.
+2026-06-12 15:49:39.662   Successfully installed the file.
+2026-06-12 15:49:39.662   -- File entry --
+2026-06-12 15:49:39.663   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-processthreads-l1-1-0.dll
+2026-06-12 15:49:39.663   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.663   Installing the file.
+2026-06-12 15:49:39.670   Successfully installed the file.
+2026-06-12 15:49:39.670   -- File entry --
+2026-06-12 15:49:39.671   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-processthreads-l1-1-1.dll
+2026-06-12 15:49:39.671   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.671   Installing the file.
+2026-06-12 15:49:39.677   Successfully installed the file.
+2026-06-12 15:49:39.677   -- File entry --
+2026-06-12 15:49:39.677   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-profile-l1-1-0.dll
+2026-06-12 15:49:39.678   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.678   Installing the file.
+2026-06-12 15:49:39.682   Successfully installed the file.
+2026-06-12 15:49:39.682   -- File entry --
+2026-06-12 15:49:39.682   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-rtlsupport-l1-1-0.dll
+2026-06-12 15:49:39.682   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.682   Installing the file.
+2026-06-12 15:49:39.685   Successfully installed the file.
+2026-06-12 15:49:39.686   -- File entry --
+2026-06-12 15:49:39.686   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-string-l1-1-0.dll
+2026-06-12 15:49:39.687   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.687   Installing the file.
+2026-06-12 15:49:39.690   Successfully installed the file.
+2026-06-12 15:49:39.691   -- File entry --
+2026-06-12 15:49:39.691   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-synch-l1-1-0.dll
+2026-06-12 15:49:39.692   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.692   Installing the file.
+2026-06-12 15:49:39.695   Successfully installed the file.
+2026-06-12 15:49:39.695   -- File entry --
+2026-06-12 15:49:39.696   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-synch-l1-2-0.dll
+2026-06-12 15:49:39.696   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.696   Installing the file.
+2026-06-12 15:49:39.699   Successfully installed the file.
+2026-06-12 15:49:39.699   -- File entry --
+2026-06-12 15:49:39.700   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-sysinfo-l1-1-0.dll
+2026-06-12 15:49:39.700   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.700   Installing the file.
+2026-06-12 15:49:39.703   Successfully installed the file.
+2026-06-12 15:49:39.703   -- File entry --
+2026-06-12 15:49:39.703   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-timezone-l1-1-0.dll
+2026-06-12 15:49:39.704   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.704   Installing the file.
+2026-06-12 15:49:39.708   Successfully installed the file.
+2026-06-12 15:49:39.708   -- File entry --
+2026-06-12 15:49:39.708   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-core-util-l1-1-0.dll
+2026-06-12 15:49:39.709   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.709   Installing the file.
+2026-06-12 15:49:39.712   Successfully installed the file.
+2026-06-12 15:49:39.712   -- File entry --
+2026-06-12 15:49:39.712   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-conio-l1-1-0.dll
+2026-06-12 15:49:39.713   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.713   Installing the file.
+2026-06-12 15:49:39.716   Successfully installed the file.
+2026-06-12 15:49:39.716   -- File entry --
+2026-06-12 15:49:39.716   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-convert-l1-1-0.dll
+2026-06-12 15:49:39.717   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.717   Installing the file.
+2026-06-12 15:49:39.720   Successfully installed the file.
+2026-06-12 15:49:39.720   -- File entry --
+2026-06-12 15:49:39.720   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-environment-l1-1-0.dll
+2026-06-12 15:49:39.721   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.721   Installing the file.
+2026-06-12 15:49:39.724   Successfully installed the file.
+2026-06-12 15:49:39.724   -- File entry --
+2026-06-12 15:49:39.724   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-filesystem-l1-1-0.dll
+2026-06-12 15:49:39.724   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.724   Installing the file.
+2026-06-12 15:49:39.728   Successfully installed the file.
+2026-06-12 15:49:39.728   -- File entry --
+2026-06-12 15:49:39.728   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-heap-l1-1-0.dll
+2026-06-12 15:49:39.729   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.729   Installing the file.
+2026-06-12 15:49:39.732   Successfully installed the file.
+2026-06-12 15:49:39.732   -- File entry --
+2026-06-12 15:49:39.732   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-locale-l1-1-0.dll
+2026-06-12 15:49:39.733   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.733   Installing the file.
+2026-06-12 15:49:39.736   Successfully installed the file.
+2026-06-12 15:49:39.736   -- File entry --
+2026-06-12 15:49:39.737   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-math-l1-1-0.dll
+2026-06-12 15:49:39.737   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.737   Installing the file.
+2026-06-12 15:49:39.741   Successfully installed the file.
+2026-06-12 15:49:39.741   -- File entry --
+2026-06-12 15:49:39.742   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-process-l1-1-0.dll
+2026-06-12 15:49:39.742   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.742   Installing the file.
+2026-06-12 15:49:39.745   Successfully installed the file.
+2026-06-12 15:49:39.745   -- File entry --
+2026-06-12 15:49:39.745   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-runtime-l1-1-0.dll
+2026-06-12 15:49:39.746   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.746   Installing the file.
+2026-06-12 15:49:39.749   Successfully installed the file.
+2026-06-12 15:49:39.749   -- File entry --
+2026-06-12 15:49:39.749   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-stdio-l1-1-0.dll
+2026-06-12 15:49:39.750   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.750   Installing the file.
+2026-06-12 15:49:39.754   Successfully installed the file.
+2026-06-12 15:49:39.754   -- File entry --
+2026-06-12 15:49:39.754   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-string-l1-1-0.dll
+2026-06-12 15:49:39.755   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.755   Installing the file.
+2026-06-12 15:49:39.758   Successfully installed the file.
+2026-06-12 15:49:39.758   -- File entry --
+2026-06-12 15:49:39.758   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-time-l1-1-0.dll
+2026-06-12 15:49:39.759   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.759   Installing the file.
+2026-06-12 15:49:39.762   Successfully installed the file.
+2026-06-12 15:49:39.762   -- File entry --
+2026-06-12 15:49:39.762   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\api-ms-win-crt-utility-l1-1-0.dll
+2026-06-12 15:49:39.763   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.763   Installing the file.
+2026-06-12 15:49:39.766   Successfully installed the file.
+2026-06-12 15:49:39.766   -- File entry --
+2026-06-12 15:49:39.767   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\base_library.zip
+2026-06-12 15:49:39.767   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.767   Installing the file.
+2026-06-12 15:49:39.807   Successfully installed the file.
+2026-06-12 15:49:39.807   -- File entry --
+2026-06-12 15:49:39.807   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\libcrypto-3-x64.dll
+2026-06-12 15:49:39.808   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.808   Installing the file.
+2026-06-12 15:49:39.962   Successfully installed the file.
+2026-06-12 15:49:39.962   -- File entry --
+2026-06-12 15:49:39.962   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\libcrypto-3.dll
+2026-06-12 15:49:39.963   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:39.963   Installing the file.
+2026-06-12 15:49:40.124   Successfully installed the file.
+2026-06-12 15:49:40.125   -- File entry --
+2026-06-12 15:49:40.126   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\libssl-3-x64.dll
+2026-06-12 15:49:40.126   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.126   Installing the file.
+2026-06-12 15:49:40.167   Successfully installed the file.
+2026-06-12 15:49:40.168   -- File entry --
+2026-06-12 15:49:40.168   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\python3.dll
+2026-06-12 15:49:40.168   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.168   Installing the file.
+2026-06-12 15:49:40.175   Successfully installed the file.
+2026-06-12 15:49:40.176   -- File entry --
+2026-06-12 15:49:40.176   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\python312.dll
+2026-06-12 15:49:40.177   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.177   Installing the file.
+2026-06-12 15:49:40.424   Successfully installed the file.
+2026-06-12 15:49:40.425   -- File entry --
+2026-06-12 15:49:40.425   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\select.pyd
+2026-06-12 15:49:40.425   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.425   Installing the file.
+2026-06-12 15:49:40.428   Successfully installed the file.
+2026-06-12 15:49:40.428   -- File entry --
+2026-06-12 15:49:40.428   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\ucrtbase.dll
+2026-06-12 15:49:40.428   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.428   Installing the file.
+2026-06-12 15:49:40.490   Successfully installed the file.
+2026-06-12 15:49:40.490   -- File entry --
+2026-06-12 15:49:40.490   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\unicodedata.pyd
+2026-06-12 15:49:40.490   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.490   Installing the file.
+2026-06-12 15:49:40.532   Successfully installed the file.
+2026-06-12 15:49:40.532   -- File entry --
+2026-06-12 15:49:40.532   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\VCRUNTIME140.dll
+2026-06-12 15:49:40.532   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.532   Installing the file.
+2026-06-12 15:49:40.539   Successfully installed the file.
+2026-06-12 15:49:40.539   -- File entry --
+2026-06-12 15:49:40.539   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\VCRUNTIME140_1.dll
+2026-06-12 15:49:40.539   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.539   Installing the file.
+2026-06-12 15:49:40.543   Successfully installed the file.
+2026-06-12 15:49:40.543   -- File entry --
+2026-06-12 15:49:40.543   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\winsound.pyd
+2026-06-12 15:49:40.544   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.544   Installing the file.
+2026-06-12 15:49:40.547   Successfully installed the file.
+2026-06-12 15:49:40.547   -- File entry --
+2026-06-12 15:49:40.547   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\_bz2.pyd
+2026-06-12 15:49:40.548   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.548   Installing the file.
+2026-06-12 15:49:40.554   Successfully installed the file.
+2026-06-12 15:49:40.554   -- File entry --
+2026-06-12 15:49:40.555   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\_decimal.pyd
+2026-06-12 15:49:40.555   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.555   Installing the file.
+2026-06-12 15:49:40.575   Successfully installed the file.
+2026-06-12 15:49:40.575   -- File entry --
+2026-06-12 15:49:40.576   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\_hashlib.pyd
+2026-06-12 15:49:40.577   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.577   Installing the file.
+2026-06-12 15:49:40.584   Successfully installed the file.
+2026-06-12 15:49:40.584   -- File entry --
+2026-06-12 15:49:40.584   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\_lzma.pyd
+2026-06-12 15:49:40.585   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.585   Installing the file.
+2026-06-12 15:49:40.596   Successfully installed the file.
+2026-06-12 15:49:40.596   -- File entry --
+2026-06-12 15:49:40.597   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\_socket.pyd
+2026-06-12 15:49:40.597   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.597   Installing the file.
+2026-06-12 15:49:40.603   Successfully installed the file.
+2026-06-12 15:49:40.603   -- File entry --
+2026-06-12 15:49:40.604   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\animation.json
+2026-06-12 15:49:40.604   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.604   Installing the file.
+2026-06-12 15:49:40.605   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets
+2026-06-12 15:49:40.608   Successfully installed the file.
+2026-06-12 15:49:40.608   -- File entry --
+2026-06-12 15:49:40.608   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\linrong.ico
+2026-06-12 15:49:40.609   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.609   Installing the file.
+2026-06-12 15:49:40.615   Successfully installed the file.
+2026-06-12 15:49:40.615   -- File entry --
+2026-06-12 15:49:40.615   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\spritesheet.webp
+2026-06-12 15:49:40.616   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.616   Installing the file.
+2026-06-12 15:49:40.756   Successfully installed the file.
+2026-06-12 15:49:40.757   -- File entry --
+2026-06-12 15:49:40.757   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\audio\company.wav
+2026-06-12 15:49:40.757   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.757   Installing the file.
+2026-06-12 15:49:40.757   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\audio
+2026-06-12 15:49:40.767   Successfully installed the file.
+2026-06-12 15:49:40.767   -- File entry --
+2026-06-12 15:49:40.767   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\audio\found.wav
+2026-06-12 15:49:40.767   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.767   Installing the file.
+2026-06-12 15:49:40.774   Successfully installed the file.
+2026-06-12 15:49:40.774   -- File entry --
+2026-06-12 15:49:40.774   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\audio\happy.wav
+2026-06-12 15:49:40.775   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.775   Installing the file.
+2026-06-12 15:49:40.782   Successfully installed the file.
+2026-06-12 15:49:40.782   -- File entry --
+2026-06-12 15:49:40.783   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\audio\hello.wav
+2026-06-12 15:49:40.783   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.783   Installing the file.
+2026-06-12 15:49:40.790   Successfully installed the file.
+2026-06-12 15:49:40.790   -- File entry --
+2026-06-12 15:49:40.791   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\audio\poked.wav
+2026-06-12 15:49:40.791   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.791   Installing the file.
+2026-06-12 15:49:40.797   Successfully installed the file.
+2026-06-12 15:49:40.797   -- File entry --
+2026-06-12 15:49:40.797   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\audio\rest.wav
+2026-06-12 15:49:40.798   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.798   Installing the file.
+2026-06-12 15:49:40.807   Successfully installed the file.
+2026-06-12 15:49:40.807   -- File entry --
+2026-06-12 15:49:40.808   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\idle-00.webp
+2026-06-12 15:49:40.808   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.808   Installing the file.
+2026-06-12 15:49:40.808   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames
+2026-06-12 15:49:40.811   Successfully installed the file.
+2026-06-12 15:49:40.812   -- File entry --
+2026-06-12 15:49:40.812   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\idle-01.webp
+2026-06-12 15:49:40.812   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.812   Installing the file.
+2026-06-12 15:49:40.814   Successfully installed the file.
+2026-06-12 15:49:40.814   -- File entry --
+2026-06-12 15:49:40.814   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\idle-02.webp
+2026-06-12 15:49:40.815   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.815   Installing the file.
+2026-06-12 15:49:40.817   Successfully installed the file.
+2026-06-12 15:49:40.818   -- File entry --
+2026-06-12 15:49:40.818   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\idle-03.webp
+2026-06-12 15:49:40.818   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.818   Installing the file.
+2026-06-12 15:49:40.820   Successfully installed the file.
+2026-06-12 15:49:40.821   -- File entry --
+2026-06-12 15:49:40.821   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\idle-04.webp
+2026-06-12 15:49:40.821   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.821   Installing the file.
+2026-06-12 15:49:40.824   Successfully installed the file.
+2026-06-12 15:49:40.824   -- File entry --
+2026-06-12 15:49:40.824   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\idle-05.webp
+2026-06-12 15:49:40.825   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.825   Installing the file.
+2026-06-12 15:49:40.828   Successfully installed the file.
+2026-06-12 15:49:40.828   -- File entry --
+2026-06-12 15:49:40.829   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\jumping-00.webp
+2026-06-12 15:49:40.829   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.829   Installing the file.
+2026-06-12 15:49:40.832   Successfully installed the file.
+2026-06-12 15:49:40.832   -- File entry --
+2026-06-12 15:49:40.832   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\jumping-01.webp
+2026-06-12 15:49:40.833   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.833   Installing the file.
+2026-06-12 15:49:40.835   Successfully installed the file.
+2026-06-12 15:49:40.835   -- File entry --
+2026-06-12 15:49:40.835   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\jumping-02.webp
+2026-06-12 15:49:40.835   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.835   Installing the file.
+2026-06-12 15:49:40.838   Successfully installed the file.
+2026-06-12 15:49:40.839   -- File entry --
+2026-06-12 15:49:40.839   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\jumping-03.webp
+2026-06-12 15:49:40.839   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.839   Installing the file.
+2026-06-12 15:49:40.844   Successfully installed the file.
+2026-06-12 15:49:40.844   -- File entry --
+2026-06-12 15:49:40.844   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\jumping-04.webp
+2026-06-12 15:49:40.845   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.845   Installing the file.
+2026-06-12 15:49:40.847   Successfully installed the file.
+2026-06-12 15:49:40.847   -- File entry --
+2026-06-12 15:49:40.847   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\review-00.webp
+2026-06-12 15:49:40.848   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.848   Installing the file.
+2026-06-12 15:49:40.852   Successfully installed the file.
+2026-06-12 15:49:40.852   -- File entry --
+2026-06-12 15:49:40.852   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\review-01.webp
+2026-06-12 15:49:40.852   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.852   Installing the file.
+2026-06-12 15:49:40.854   Successfully installed the file.
+2026-06-12 15:49:40.855   -- File entry --
+2026-06-12 15:49:40.855   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\review-02.webp
+2026-06-12 15:49:40.855   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.855   Installing the file.
+2026-06-12 15:49:40.857   Successfully installed the file.
+2026-06-12 15:49:40.857   -- File entry --
+2026-06-12 15:49:40.857   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\review-03.webp
+2026-06-12 15:49:40.857   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.858   Installing the file.
+2026-06-12 15:49:40.861   Successfully installed the file.
+2026-06-12 15:49:40.861   -- File entry --
+2026-06-12 15:49:40.861   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\review-04.webp
+2026-06-12 15:49:40.861   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.861   Installing the file.
+2026-06-12 15:49:40.863   Successfully installed the file.
+2026-06-12 15:49:40.863   -- File entry --
+2026-06-12 15:49:40.863   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\review-05.webp
+2026-06-12 15:49:40.864   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.864   Installing the file.
+2026-06-12 15:49:40.866   Successfully installed the file.
+2026-06-12 15:49:40.867   -- File entry --
+2026-06-12 15:49:40.867   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\running-00.webp
+2026-06-12 15:49:40.867   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.867   Installing the file.
+2026-06-12 15:49:40.869   Successfully installed the file.
+2026-06-12 15:49:40.869   -- File entry --
+2026-06-12 15:49:40.870   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\running-01.webp
+2026-06-12 15:49:40.870   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.870   Installing the file.
+2026-06-12 15:49:40.872   Successfully installed the file.
+2026-06-12 15:49:40.873   -- File entry --
+2026-06-12 15:49:40.873   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\running-02.webp
+2026-06-12 15:49:40.873   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.873   Installing the file.
+2026-06-12 15:49:40.876   Successfully installed the file.
+2026-06-12 15:49:40.876   -- File entry --
+2026-06-12 15:49:40.876   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\running-03.webp
+2026-06-12 15:49:40.877   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.877   Installing the file.
+2026-06-12 15:49:40.879   Successfully installed the file.
+2026-06-12 15:49:40.879   -- File entry --
+2026-06-12 15:49:40.879   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\running-04.webp
+2026-06-12 15:49:40.880   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.880   Installing the file.
+2026-06-12 15:49:40.882   Successfully installed the file.
+2026-06-12 15:49:40.882   -- File entry --
+2026-06-12 15:49:40.882   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\running-05.webp
+2026-06-12 15:49:40.883   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.883   Installing the file.
+2026-06-12 15:49:40.888   Successfully installed the file.
+2026-06-12 15:49:40.888   -- File entry --
+2026-06-12 15:49:40.888   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\sitting-00.webp
+2026-06-12 15:49:40.889   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.889   Installing the file.
+2026-06-12 15:49:40.892   Successfully installed the file.
+2026-06-12 15:49:40.892   -- File entry --
+2026-06-12 15:49:40.892   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\sitting-01.webp
+2026-06-12 15:49:40.893   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.893   Installing the file.
+2026-06-12 15:49:40.895   Successfully installed the file.
+2026-06-12 15:49:40.895   -- File entry --
+2026-06-12 15:49:40.895   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\sitting-02.webp
+2026-06-12 15:49:40.896   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.896   Installing the file.
+2026-06-12 15:49:40.899   Successfully installed the file.
+2026-06-12 15:49:40.899   -- File entry --
+2026-06-12 15:49:40.900   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\sitting-03.webp
+2026-06-12 15:49:40.900   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.900   Installing the file.
+2026-06-12 15:49:40.902   Successfully installed the file.
+2026-06-12 15:49:40.902   -- File entry --
+2026-06-12 15:49:40.902   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\sitting-04.webp
+2026-06-12 15:49:40.903   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.903   Installing the file.
+2026-06-12 15:49:40.905   Successfully installed the file.
+2026-06-12 15:49:40.905   -- File entry --
+2026-06-12 15:49:40.905   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\sitting-05.webp
+2026-06-12 15:49:40.905   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.905   Installing the file.
+2026-06-12 15:49:40.908   Successfully installed the file.
+2026-06-12 15:49:40.909   -- File entry --
+2026-06-12 15:49:40.909   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\sitting-06.webp
+2026-06-12 15:49:40.909   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.909   Installing the file.
+2026-06-12 15:49:40.912   Successfully installed the file.
+2026-06-12 15:49:40.912   -- File entry --
+2026-06-12 15:49:40.912   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\sitting-07.webp
+2026-06-12 15:49:40.913   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.913   Installing the file.
+2026-06-12 15:49:40.916   Successfully installed the file.
+2026-06-12 15:49:40.916   -- File entry --
+2026-06-12 15:49:40.916   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waiting-00.webp
+2026-06-12 15:49:40.917   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.917   Installing the file.
+2026-06-12 15:49:40.919   Successfully installed the file.
+2026-06-12 15:49:40.919   -- File entry --
+2026-06-12 15:49:40.920   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waiting-01.webp
+2026-06-12 15:49:40.920   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.920   Installing the file.
+2026-06-12 15:49:40.923   Successfully installed the file.
+2026-06-12 15:49:40.923   -- File entry --
+2026-06-12 15:49:40.923   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waiting-02.webp
+2026-06-12 15:49:40.924   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.924   Installing the file.
+2026-06-12 15:49:40.929   Successfully installed the file.
+2026-06-12 15:49:40.929   -- File entry --
+2026-06-12 15:49:40.929   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waiting-03.webp
+2026-06-12 15:49:40.930   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.930   Installing the file.
+2026-06-12 15:49:40.935   Successfully installed the file.
+2026-06-12 15:49:40.936   -- File entry --
+2026-06-12 15:49:40.936   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waiting-04.webp
+2026-06-12 15:49:40.936   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.936   Installing the file.
+2026-06-12 15:49:40.940   Successfully installed the file.
+2026-06-12 15:49:40.940   -- File entry --
+2026-06-12 15:49:40.940   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waiting-05.webp
+2026-06-12 15:49:40.941   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.941   Installing the file.
+2026-06-12 15:49:40.944   Successfully installed the file.
+2026-06-12 15:49:40.944   -- File entry --
+2026-06-12 15:49:40.944   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-left-00.webp
+2026-06-12 15:49:40.945   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.945   Installing the file.
+2026-06-12 15:49:40.948   Successfully installed the file.
+2026-06-12 15:49:40.948   -- File entry --
+2026-06-12 15:49:40.948   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-left-01.webp
+2026-06-12 15:49:40.949   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.949   Installing the file.
+2026-06-12 15:49:40.952   Successfully installed the file.
+2026-06-12 15:49:40.952   -- File entry --
+2026-06-12 15:49:40.952   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-left-02.webp
+2026-06-12 15:49:40.953   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.953   Installing the file.
+2026-06-12 15:49:40.956   Successfully installed the file.
+2026-06-12 15:49:40.957   -- File entry --
+2026-06-12 15:49:40.957   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-left-03.webp
+2026-06-12 15:49:40.957   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.957   Installing the file.
+2026-06-12 15:49:40.960   Successfully installed the file.
+2026-06-12 15:49:40.960   -- File entry --
+2026-06-12 15:49:40.960   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-left-04.webp
+2026-06-12 15:49:40.961   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.961   Installing the file.
+2026-06-12 15:49:40.963   Successfully installed the file.
+2026-06-12 15:49:40.964   -- File entry --
+2026-06-12 15:49:40.964   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-left-05.webp
+2026-06-12 15:49:40.964   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.964   Installing the file.
+2026-06-12 15:49:40.967   Successfully installed the file.
+2026-06-12 15:49:40.967   -- File entry --
+2026-06-12 15:49:40.967   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-left-06.webp
+2026-06-12 15:49:40.968   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.968   Installing the file.
+2026-06-12 15:49:40.971   Successfully installed the file.
+2026-06-12 15:49:40.971   -- File entry --
+2026-06-12 15:49:40.971   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-left-07.webp
+2026-06-12 15:49:40.972   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.972   Installing the file.
+2026-06-12 15:49:40.975   Successfully installed the file.
+2026-06-12 15:49:40.975   -- File entry --
+2026-06-12 15:49:40.975   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-right-00.webp
+2026-06-12 15:49:40.976   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.976   Installing the file.
+2026-06-12 15:49:40.979   Successfully installed the file.
+2026-06-12 15:49:40.979   -- File entry --
+2026-06-12 15:49:40.979   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-right-01.webp
+2026-06-12 15:49:40.979   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.979   Installing the file.
+2026-06-12 15:49:40.983   Successfully installed the file.
+2026-06-12 15:49:40.983   -- File entry --
+2026-06-12 15:49:40.983   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-right-02.webp
+2026-06-12 15:49:40.983   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.983   Installing the file.
+2026-06-12 15:49:40.986   Successfully installed the file.
+2026-06-12 15:49:40.987   -- File entry --
+2026-06-12 15:49:40.987   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-right-03.webp
+2026-06-12 15:49:40.987   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.987   Installing the file.
+2026-06-12 15:49:40.991   Successfully installed the file.
+2026-06-12 15:49:40.991   -- File entry --
+2026-06-12 15:49:40.991   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-right-04.webp
+2026-06-12 15:49:40.992   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.992   Installing the file.
+2026-06-12 15:49:40.995   Successfully installed the file.
+2026-06-12 15:49:40.995   -- File entry --
+2026-06-12 15:49:40.995   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-right-05.webp
+2026-06-12 15:49:40.995   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:40.995   Installing the file.
+2026-06-12 15:49:40.999   Successfully installed the file.
+2026-06-12 15:49:40.999   -- File entry --
+2026-06-12 15:49:40.999   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-right-06.webp
+2026-06-12 15:49:40.999   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.000   Installing the file.
+2026-06-12 15:49:41.004   Successfully installed the file.
+2026-06-12 15:49:41.004   -- File entry --
+2026-06-12 15:49:41.004   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\walking-right-07.webp
+2026-06-12 15:49:41.004   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.004   Installing the file.
+2026-06-12 15:49:41.008   Successfully installed the file.
+2026-06-12 15:49:41.009   -- File entry --
+2026-06-12 15:49:41.009   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waving-00.webp
+2026-06-12 15:49:41.010   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.010   Installing the file.
+2026-06-12 15:49:41.013   Successfully installed the file.
+2026-06-12 15:49:41.013   -- File entry --
+2026-06-12 15:49:41.013   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waving-01.webp
+2026-06-12 15:49:41.014   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.014   Installing the file.
+2026-06-12 15:49:41.017   Successfully installed the file.
+2026-06-12 15:49:41.017   -- File entry --
+2026-06-12 15:49:41.017   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waving-02.webp
+2026-06-12 15:49:41.018   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.018   Installing the file.
+2026-06-12 15:49:41.021   Successfully installed the file.
+2026-06-12 15:49:41.021   -- File entry --
+2026-06-12 15:49:41.021   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\assets\frames\waving-03.webp
+2026-06-12 15:49:41.021   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.021   Installing the file.
+2026-06-12 15:49:41.027   Successfully installed the file.
+2026-06-12 15:49:41.028   -- File entry --
+2026-06-12 15:49:41.028   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\MSVCP140.dll
+2026-06-12 15:49:41.028   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.028   Installing the file.
+2026-06-12 15:49:41.028   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6
+2026-06-12 15:49:41.051   Successfully installed the file.
+2026-06-12 15:49:41.051   -- File entry --
+2026-06-12 15:49:41.052   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\MSVCP140_1.dll
+2026-06-12 15:49:41.052   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.052   Installing the file.
+2026-06-12 15:49:41.056   Successfully installed the file.
+2026-06-12 15:49:41.056   -- File entry --
+2026-06-12 15:49:41.056   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\MSVCP140_2.dll
+2026-06-12 15:49:41.057   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.057   Installing the file.
+2026-06-12 15:49:41.074   Successfully installed the file.
+2026-06-12 15:49:41.075   -- File entry --
+2026-06-12 15:49:41.075   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\opengl32sw.dll
+2026-06-12 15:49:41.076   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.076   Installing the file.
+2026-06-12 15:49:41.921   Successfully installed the file.
+2026-06-12 15:49:41.921   -- File entry --
+2026-06-12 15:49:41.921   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\pyside6.abi3.dll
+2026-06-12 15:49:41.922   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.922   Installing the file.
+2026-06-12 15:49:41.936   Successfully installed the file.
+2026-06-12 15:49:41.936   -- File entry --
+2026-06-12 15:49:41.937   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\Qt6Core.dll
+2026-06-12 15:49:41.937   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:41.937   Installing the file.
+2026-06-12 15:49:42.393   Successfully installed the file.
+2026-06-12 15:49:42.394   -- File entry --
+2026-06-12 15:49:42.394   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\Qt6Gui.dll
+2026-06-12 15:49:42.394   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:42.394   Installing the file.
+2026-06-12 15:49:42.780   Successfully installed the file.
+2026-06-12 15:49:42.780   -- File entry --
+2026-06-12 15:49:42.780   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\Qt6Network.dll
+2026-06-12 15:49:42.780   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:42.780   Installing the file.
+2026-06-12 15:49:42.840   Successfully installed the file.
+2026-06-12 15:49:42.840   -- File entry --
+2026-06-12 15:49:42.840   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\Qt6Svg.dll
+2026-06-12 15:49:42.841   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:42.841   Installing the file.
+2026-06-12 15:49:42.867   Successfully installed the file.
+2026-06-12 15:49:42.867   -- File entry --
+2026-06-12 15:49:42.868   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\Qt6Widgets.dll
+2026-06-12 15:49:42.868   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:42.868   Installing the file.
+2026-06-12 15:49:43.119   Successfully installed the file.
+2026-06-12 15:49:43.119   -- File entry --
+2026-06-12 15:49:43.120   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\QtCore.pyd
+2026-06-12 15:49:43.120   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.120   Installing the file.
+2026-06-12 15:49:43.235   Successfully installed the file.
+2026-06-12 15:49:43.235   -- File entry --
+2026-06-12 15:49:43.235   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\QtGui.pyd
+2026-06-12 15:49:43.236   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.236   Installing the file.
+2026-06-12 15:49:43.365   Successfully installed the file.
+2026-06-12 15:49:43.365   -- File entry --
+2026-06-12 15:49:43.366   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\QtNetwork.pyd
+2026-06-12 15:49:43.366   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.366   Installing the file.
+2026-06-12 15:49:43.395   Successfully installed the file.
+2026-06-12 15:49:43.395   -- File entry --
+2026-06-12 15:49:43.395   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\QtWidgets.pyd
+2026-06-12 15:49:43.395   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.396   Installing the file.
+2026-06-12 15:49:43.522   Successfully installed the file.
+2026-06-12 15:49:43.523   -- File entry --
+2026-06-12 15:49:43.523   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\VCRUNTIME140.dll
+2026-06-12 15:49:43.523   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.523   Installing the file.
+2026-06-12 15:49:43.529   Successfully installed the file.
+2026-06-12 15:49:43.529   -- File entry --
+2026-06-12 15:49:43.529   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\VCRUNTIME140_1.dll
+2026-06-12 15:49:43.530   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.530   Installing the file.
+2026-06-12 15:49:43.533   Successfully installed the file.
+2026-06-12 15:49:43.533   -- File entry --
+2026-06-12 15:49:43.533   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\generic\qtuiotouchplugin.dll
+2026-06-12 15:49:43.534   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.534   Installing the file.
+2026-06-12 15:49:43.534   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins
+2026-06-12 15:49:43.534   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\generic
+2026-06-12 15:49:43.540   Successfully installed the file.
+2026-06-12 15:49:43.540   -- File entry --
+2026-06-12 15:49:43.540   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\iconengines\qsvgicon.dll
+2026-06-12 15:49:43.541   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.541   Installing the file.
+2026-06-12 15:49:43.541   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\iconengines
+2026-06-12 15:49:43.546   Successfully installed the file.
+2026-06-12 15:49:43.546   -- File entry --
+2026-06-12 15:49:43.546   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qgif.dll
+2026-06-12 15:49:43.547   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.547   Installing the file.
+2026-06-12 15:49:43.547   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats
+2026-06-12 15:49:43.551   Successfully installed the file.
+2026-06-12 15:49:43.551   -- File entry --
+2026-06-12 15:49:43.551   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qicns.dll
+2026-06-12 15:49:43.552   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.552   Installing the file.
+2026-06-12 15:49:43.557   Successfully installed the file.
+2026-06-12 15:49:43.557   -- File entry --
+2026-06-12 15:49:43.557   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qico.dll
+2026-06-12 15:49:43.558   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.558   Installing the file.
+2026-06-12 15:49:43.562   Successfully installed the file.
+2026-06-12 15:49:43.562   -- File entry --
+2026-06-12 15:49:43.562   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qjpeg.dll
+2026-06-12 15:49:43.563   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.563   Installing the file.
+2026-06-12 15:49:43.586   Successfully installed the file.
+2026-06-12 15:49:43.586   -- File entry --
+2026-06-12 15:49:43.586   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qsvg.dll
+2026-06-12 15:49:43.586   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.586   Installing the file.
+2026-06-12 15:49:43.590   Successfully installed the file.
+2026-06-12 15:49:43.591   -- File entry --
+2026-06-12 15:49:43.591   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qtga.dll
+2026-06-12 15:49:43.591   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.591   Installing the file.
+2026-06-12 15:49:43.595   Successfully installed the file.
+2026-06-12 15:49:43.595   -- File entry --
+2026-06-12 15:49:43.596   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qtiff.dll
+2026-06-12 15:49:43.596   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.596   Installing the file.
+2026-06-12 15:49:43.615   Successfully installed the file.
+2026-06-12 15:49:43.615   -- File entry --
+2026-06-12 15:49:43.616   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qwbmp.dll
+2026-06-12 15:49:43.616   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.616   Installing the file.
+2026-06-12 15:49:43.620   Successfully installed the file.
+2026-06-12 15:49:43.620   -- File entry --
+2026-06-12 15:49:43.621   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\imageformats\qwebp.dll
+2026-06-12 15:49:43.621   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.621   Installing the file.
+2026-06-12 15:49:43.647   Successfully installed the file.
+2026-06-12 15:49:43.647   -- File entry --
+2026-06-12 15:49:43.647   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\networkinformation\qnetworklistmanager.dll
+2026-06-12 15:49:43.648   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.648   Installing the file.
+2026-06-12 15:49:43.648   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\networkinformation
+2026-06-12 15:49:43.653   Successfully installed the file.
+2026-06-12 15:49:43.653   -- File entry --
+2026-06-12 15:49:43.653   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\platforms\qwindows.dll
+2026-06-12 15:49:43.653   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.653   Installing the file.
+2026-06-12 15:49:43.653   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\platforms
+2026-06-12 15:49:43.693   Successfully installed the file.
+2026-06-12 15:49:43.693   -- File entry --
+2026-06-12 15:49:43.694   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\styles\qmodernwindowsstyle.dll
+2026-06-12 15:49:43.694   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.694   Installing the file.
+2026-06-12 15:49:43.694   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\styles
+2026-06-12 15:49:43.706   Successfully installed the file.
+2026-06-12 15:49:43.706   -- File entry --
+2026-06-12 15:49:43.706   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\tls\qcertonlybackend.dll
+2026-06-12 15:49:43.707   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.707   Installing the file.
+2026-06-12 15:49:43.707   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\tls
+2026-06-12 15:49:43.713   Successfully installed the file.
+2026-06-12 15:49:43.713   -- File entry --
+2026-06-12 15:49:43.714   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\tls\qopensslbackend.dll
+2026-06-12 15:49:43.714   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.714   Installing the file.
+2026-06-12 15:49:43.729   Successfully installed the file.
+2026-06-12 15:49:43.729   -- File entry --
+2026-06-12 15:49:43.729   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\PySide6\plugins\tls\qschannelbackend.dll
+2026-06-12 15:49:43.730   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.730   Installing the file.
+2026-06-12 15:49:43.741   Successfully installed the file.
+2026-06-12 15:49:43.742   -- File entry --
+2026-06-12 15:49:43.742   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\shiboken6\MSVCP140.dll
+2026-06-12 15:49:43.743   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.743   Installing the file.
+2026-06-12 15:49:43.744   Creating directory: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\shiboken6
+2026-06-12 15:49:43.766   Successfully installed the file.
+2026-06-12 15:49:43.766   -- File entry --
+2026-06-12 15:49:43.767   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\shiboken6\Shiboken.pyd
+2026-06-12 15:49:43.767   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.767   Installing the file.
+2026-06-12 15:49:43.772   Successfully installed the file.
+2026-06-12 15:49:43.772   -- File entry --
+2026-06-12 15:49:43.772   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\shiboken6\shiboken6.abi3.dll
+2026-06-12 15:49:43.773   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.773   Installing the file.
+2026-06-12 15:49:43.793   Successfully installed the file.
+2026-06-12 15:49:43.793   -- File entry --
+2026-06-12 15:49:43.793   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\shiboken6\VCRUNTIME140.dll
+2026-06-12 15:49:43.794   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.794   Installing the file.
+2026-06-12 15:49:43.799   Successfully installed the file.
+2026-06-12 15:49:43.799   -- File entry --
+2026-06-12 15:49:43.799   Dest filename: D:\linrong_pet\build\installer-smoke-v1.4.1\app\_internal\shiboken6\VCRUNTIME140_1.dll
+2026-06-12 15:49:43.799   Time stamp of our file: 2026-06-12 15:48:38.000
+2026-06-12 15:49:43.799   Installing the file.
+2026-06-12 15:49:43.803   Successfully installed the file.
+2026-06-12 15:49:43.803   -- Icon entry --
+2026-06-12 15:49:43.803   Dest filename: C:\Users\altairhuang\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\林榕桌宠\林榕桌宠.lnk
+2026-06-12 15:49:43.835   Creating the icon.
+2026-06-12 15:49:43.952   Successfully created the icon.
+2026-06-12 15:49:44.060   -- Icon entry --
+2026-06-12 15:49:44.060   Dest filename: C:\Users\altairhuang\Desktop\林榕桌宠.lnk
+2026-06-12 15:49:44.089   Creating the icon.
+2026-06-12 15:49:44.135   Successfully created the icon.
+2026-06-12 15:49:44.289   Saving uninstall information.
+2026-06-12 15:49:44.289   Deleting uninstall key left over from previous non administrative install.
+2026-06-12 15:49:44.290   Creating new uninstall key: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\{63B0134A-4A66-48C7-9851-1EC0050F131B}_is1
+2026-06-12 15:49:44.291   Writing uninstall key values.
+2026-06-12 15:49:44.294   Detected previous administrative 64-bit install? No
+2026-06-12 15:49:44.294   Detected previous administrative 32-bit install? No
+2026-06-12 15:49:44.302   Installation process succeeded.
+2026-06-12 15:49:44.303   Need to restart Windows? No
+2026-06-12 15:49:44.312   Deinitializing Setup.
+2026-06-12 15:49:44.329   Log closed.

@@ -4,7 +4,14 @@ from PySide6.QtCore import QPoint
 from PySide6.QtGui import QIcon
 
 import linrong_pet.controller as controller_module
-from linrong_pet.controller import INTERACTIONS, PetController
+from linrong_pet.controller import (
+    AMBIENT_INTERVAL_MS,
+    AMBIENT_STATES,
+    INTERACTIONS,
+    ROAM_DISTANCE_PX,
+    ROAM_INTERVAL_MS,
+    PetController,
+)
 from linrong_pet.settings import PetSettings, SettingsStore
 from linrong_pet.tray import PetTrayIcon
 
@@ -15,6 +22,7 @@ def make_controller(tmp_path, monkeypatch, request) -> PetController:
     store.save(PetSettings(roaming_enabled=False))
     controller = PetController(store)
     controller.roam_timer.stop()
+    controller.ambient_timer.stop()
     controller.resume_timer.stop()
     controller.move_timer.stop()
     request.addfinalizer(controller.shutdown)
@@ -71,6 +79,8 @@ def test_roaming_moves_on_primary_screen_floor(
     controller.start_roaming()
     assert controller.player.state_name == "walking-left"
     assert controller._target == QPoint(bounds.left(), controller.window.floor_y())
+    assert abs(controller._target.x() - start_x) <= ROAM_DISTANCE_PX[1]
+    assert not controller.ambient_timer.isActive()
 
     before = controller.window.pos()
     controller._move_step()
@@ -78,6 +88,67 @@ def test_roaming_moves_on_primary_screen_floor(
     assert after.x() < before.x()
     assert after.y() == controller.window.floor_y()
     assert after == controller.window.clamped_position(after)
+
+
+def test_autonomous_timers_use_relaxed_intervals(
+    qtbot, tmp_path, monkeypatch, request
+):
+    controller = make_controller(tmp_path, monkeypatch, request)
+    qtbot.addWidget(controller.window)
+    controller.settings.roaming_enabled = True
+    monkeypatch.setattr(
+        controller_module.random,
+        "randint",
+        lambda minimum, maximum: minimum,
+    )
+
+    controller.schedule_roaming()
+    controller.schedule_ambient_action()
+
+    assert controller.roam_timer.interval() == ROAM_INTERVAL_MS[0]
+    assert controller.ambient_timer.interval() == AMBIENT_INTERVAL_MS[0]
+    assert controller.roam_timer.isActive()
+    assert controller.ambient_timer.isActive()
+
+
+def test_ambient_action_runs_without_click_or_audio(
+    qtbot, tmp_path, monkeypatch, request
+):
+    controller = make_controller(tmp_path, monkeypatch, request)
+    qtbot.addWidget(controller.window)
+    played = []
+    messages = []
+    monkeypatch.setattr(controller_module.random, "choice", lambda _: "jumping")
+    monkeypatch.setattr(
+        controller_module,
+        "AMBIENT_INTERVAL_MS",
+        (20, 20),
+    )
+    monkeypatch.setattr(controller.audio, "play", played.append)
+    monkeypatch.setattr(
+        controller.bubble,
+        "show_message",
+        lambda *args: messages.append(args),
+    )
+
+    controller.schedule_ambient_action()
+    qtbot.waitUntil(
+        lambda: controller.player.state_name == "jumping",
+        timeout=1000,
+    )
+
+    assert controller.player.state_name == "jumping"
+    assert controller._interaction_active
+    assert not controller.roam_timer.isActive()
+    assert played == []
+    assert messages == []
+    assert controller_module.SITTING_STATE not in AMBIENT_STATES
+
+    controller._animation_finished("jumping")
+
+    assert controller.player.state_name == "idle"
+    assert not controller._interaction_active
+    assert controller.ambient_timer.isActive()
 
 
 def test_sitting_holds_until_next_click(

@@ -32,6 +32,16 @@ INTERACTIONS = (
     Interaction("running", "rest.wav", "记得让眼睛休息一下哦。"),
 )
 SITTING_STATE = "sitting"
+AMBIENT_STATES = (
+    "waving",
+    "jumping",
+    "waiting",
+    "running",
+    "review",
+)
+ROAM_INTERVAL_MS = (30_000, 50_000)
+AMBIENT_INTERVAL_MS = (18_000, 32_000)
+ROAM_DISTANCE_PX = (160, 420)
 
 
 class PetController(QObject):
@@ -67,6 +77,7 @@ class PetController(QObject):
         self._move_origin = QPoint()
         self._move_progress = 0.0
         self._move_distance = 0.0
+        self._last_ambient_state: str | None = None
 
         self.move_timer = QTimer(self)
         self.move_timer.setTimerType(Qt.PreciseTimer)
@@ -75,9 +86,12 @@ class PetController(QObject):
         self.roam_timer = QTimer(self)
         self.roam_timer.setSingleShot(True)
         self.roam_timer.timeout.connect(self.start_roaming)
+        self.ambient_timer = QTimer(self)
+        self.ambient_timer.setSingleShot(True)
+        self.ambient_timer.timeout.connect(self._start_ambient_action)
         self.resume_timer = QTimer(self)
         self.resume_timer.setSingleShot(True)
-        self.resume_timer.timeout.connect(self.start_roaming)
+        self.resume_timer.timeout.connect(self._resume_autonomous_activity)
         self.hover_timer = QTimer(self)
         self.hover_timer.setSingleShot(True)
         self.hover_timer.timeout.connect(self._hover_reaction)
@@ -101,6 +115,7 @@ class PetController(QObject):
         self.window.show()
         self.window.raise_()
         self.schedule_roaming()
+        self.schedule_ambient_action()
 
     def _restore_position(self) -> None:
         bounds = self.window.available_geometry()
@@ -121,6 +136,7 @@ class PetController(QObject):
     def _stop_runtime(self) -> None:
         self.move_timer.stop()
         self.roam_timer.stop()
+        self.ambient_timer.stop()
         self.resume_timer.stop()
         self.hover_timer.stop()
         self.player.timer.stop()
@@ -142,7 +158,24 @@ class PetController(QObject):
             and not self._sitting_down
             and not self._standing_up
         ):
-            self.roam_timer.start(random.randint(6000, 14000))
+            self.roam_timer.start(random.randint(*ROAM_INTERVAL_MS))
+
+    def schedule_ambient_action(self) -> None:
+        self.ambient_timer.stop()
+        if (
+            self.window.isVisible()
+            and not self._interaction_active
+            and not self._dragging
+            and not self._seated
+            and not self._sitting_down
+            and not self._standing_up
+            and not self.move_timer.isActive()
+        ):
+            self.ambient_timer.start(random.randint(*AMBIENT_INTERVAL_MS))
+
+    def _resume_autonomous_activity(self) -> None:
+        self.schedule_roaming()
+        self.schedule_ambient_action()
 
     def start_roaming(self) -> None:
         if (
@@ -159,19 +192,35 @@ class PetController(QObject):
         min_x = bounds.left()
         max_x = bounds.right() - self.window.width() + 1
         if max_x <= min_x:
+            self.schedule_roaming()
             return
         current_x = self.window.x()
-        candidates = [
-            x
-            for x in (
-                random.randint(min_x, max_x),
-                random.randint(min_x, max_x),
-            )
-            if abs(x - current_x) >= min(80, max_x - min_x)
-        ]
-        target_x = candidates[0] if candidates else (
-            min_x if current_x > (min_x + max_x) // 2 else max_x
+        available_span = max_x - min_x
+        minimum_distance = min(ROAM_DISTANCE_PX[0], available_span)
+        maximum_distance = min(ROAM_DISTANCE_PX[1], available_span)
+        offsets = (
+            random.randint(-maximum_distance, maximum_distance),
+            random.randint(-maximum_distance, maximum_distance),
         )
+        candidates = [
+            max(min_x, min(max_x, current_x + offset))
+            for offset in offsets
+            if abs(offset) >= minimum_distance
+        ]
+        candidates = [
+            target_x
+            for target_x in candidates
+            if abs(target_x - current_x) >= minimum_distance
+        ]
+        if candidates:
+            target_x = candidates[0]
+        else:
+            left_room = current_x - min_x
+            right_room = max_x - current_x
+            if right_room >= left_room:
+                target_x = current_x + min(maximum_distance, right_room)
+            else:
+                target_x = current_x - min(maximum_distance, left_room)
         self._target = QPoint(target_x, self.window.floor_y())
         self._speed = random.uniform(45.0, 75.0)
         self._move_origin = self.window.pos()
@@ -184,6 +233,7 @@ class PetController(QObject):
             "walking-right" if target_x >= current_x else "walking-left",
             repeat=True,
         )
+        self.ambient_timer.stop()
         self.move_timer.start()
 
     def _move_step(self) -> None:
@@ -223,6 +273,30 @@ class PetController(QObject):
             self.player.play("idle", repeat=True)
         self.save()
         self.schedule_roaming()
+        self.schedule_ambient_action()
+
+    def _start_ambient_action(self) -> None:
+        if (
+            not self.window.isVisible()
+            or self._interaction_active
+            or self._dragging
+            or self._seated
+            or self._sitting_down
+            or self._standing_up
+            or self.move_timer.isActive()
+        ):
+            self.schedule_ambient_action()
+            return
+        choices = tuple(
+            state
+            for state in AMBIENT_STATES
+            if state != self._last_ambient_state
+        )
+        state = random.choice(choices or AMBIENT_STATES)
+        self._last_ambient_state = state
+        self.roam_timer.stop()
+        self._interaction_active = True
+        self.player.play(state, repeat=False)
 
     def interact(self) -> None:
         if self._sitting_down or self._standing_up:
@@ -232,6 +306,7 @@ class PetController(QObject):
             return
         self.move_timer.stop()
         self.roam_timer.stop()
+        self.ambient_timer.stop()
         self._target = None
         self._interaction_active = True
         interaction = random.choice(INTERACTIONS)
@@ -244,6 +319,7 @@ class PetController(QObject):
     def _stand_up(self) -> None:
         self.move_timer.stop()
         self.roam_timer.stop()
+        self.ambient_timer.stop()
         self.resume_timer.stop()
         self._target = None
         self._seated = False
@@ -263,6 +339,8 @@ class PetController(QObject):
             or self.move_timer.isActive()
         ):
             return
+        self.roam_timer.stop()
+        self.ambient_timer.stop()
         self._interaction_active = True
         self.player.play("review", repeat=False)
 
@@ -278,6 +356,7 @@ class PetController(QObject):
         self._interaction_active = False
         self.player.play("idle", repeat=True)
         self.schedule_roaming()
+        self.schedule_ambient_action()
 
     def _drag_started(self) -> None:
         self._dragging = True
@@ -285,6 +364,7 @@ class PetController(QObject):
         self._standing_up = False
         self.move_timer.stop()
         self.roam_timer.stop()
+        self.ambient_timer.stop()
         self.resume_timer.stop()
         self._target = None
         self.bubble.hide()
@@ -305,7 +385,7 @@ class PetController(QObject):
         self._dragging = False
         self.window.clamp_to_primary_screen()
         self.save()
-        if self.settings.roaming_enabled and not self._seated:
+        if not self._seated:
             self.resume_timer.start(2000)
 
     def _screen_changed(self, _geometry=None) -> None:
@@ -318,10 +398,12 @@ class PetController(QObject):
         self.window.raise_()
         self.visibility_changed.emit(True)
         self.schedule_roaming()
+        self.schedule_ambient_action()
 
     def hide_pet(self) -> None:
         self.move_timer.stop()
         self.roam_timer.stop()
+        self.ambient_timer.stop()
         self.resume_timer.stop()
         self.bubble.hide()
         self.window.hide()

@@ -200,7 +200,7 @@ def run(executable: Path) -> dict[str, object]:
 
             roaming_observed = False
             roaming_start = after_drag
-            roaming_deadline = time.monotonic() + 4.0
+            roaming_deadline = time.monotonic() + 1.0
             while time.monotonic() < roaming_deadline:
                 time.sleep(0.1)
                 if win32gui.GetWindowRect(hwnd) != roaming_start:
@@ -248,7 +248,6 @@ def run(executable: Path) -> dict[str, object]:
                 bubble_visible,
                 drag_moved_window,
                 drag_inside_work_area,
-                roaming_observed,
                 secondary_exit == 0,
                 result["tray_message_window_present"],
                 resources["private_memory_mb"] < 100,

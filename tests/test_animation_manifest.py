@@ -25,6 +25,10 @@ def test_production_animation_manifest():
     assert manifest.states["walking-right"].frames == 8
     assert manifest.states["walking-left"].frames == 8
     assert manifest.states["review"].row == 8
+    idle_durations = manifest.states["idle"].durations_ms
+    assert 5800 <= sum(idle_durations) <= 6500
+    assert idle_durations[0] >= 5000
+    assert max(idle_durations[1:]) <= 100
 
 
 def test_animation_player_can_reverse_to_the_first_frame(qtbot):

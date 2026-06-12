@@ -1,6 +1,6 @@
 {
-  "ok": false,
-  "startup_seconds": 2.125,
+  "ok": true,
+  "startup_seconds": 2.203,
   "window_rect": [
     2185,
     1072,
@@ -28,7 +28,7 @@
   "tray_message_window_present": true,
   "resources": {
     "total_cpu_percent": 0.039,
-    "private_memory_mb": 41.04,
-    "working_set_mb": 78.67
+    "private_memory_mb": 37.87,
+    "working_set_mb": 75.71
   }
 }
