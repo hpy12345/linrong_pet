@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "linrong-pet"
-version = "1.4.2"
+version = "1.5.0"
 description = "林榕 Windows 桌面宠物"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"

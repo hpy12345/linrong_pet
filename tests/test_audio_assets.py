@@ -21,6 +21,7 @@ def test_offline_voice_assets_are_valid_mono_wav_files():
         "poked.wav",
         "company.wav",
         "rest.wav",
+        "love.wav",
     }
     assert {path.name for path in audio_dir.glob("*.wav")} == expected
 

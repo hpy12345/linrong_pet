@@ -31,6 +31,10 @@ class RowSpec:
     baseline: int
     max_width_ratio: float
     target_head_width: int | None
+    scale_by_largest_component: bool
+    preserve_detached_effects: bool
+    max_detached_effects: int | None
+    detached_effect_min_area: int
 
 
 def _cluster_centers(mask: np.ndarray, count: int) -> np.ndarray:
@@ -146,6 +150,10 @@ def _render_subjects(
     subject_scales: list[float] | None = None,
     baseline_offsets: list[int] | None = None,
     target_head_width: int | None = None,
+    scale_by_largest_component: bool = False,
+    preserve_detached_effects: bool = False,
+    max_detached_effects: int | None = None,
+    detached_effect_min_area: int = 8,
 ) -> list[Image.Image]:
     cell_width, cell_height = cell_size
     resolved_subject_scales = subject_scales or [1.0] * len(subjects)
@@ -153,9 +161,33 @@ def _render_subjects(
         raise ValueError("subject scale count does not match frame count")
     if any(scale <= 0 for scale in resolved_subject_scales):
         raise ValueError("subject scales must be positive")
+    if preserve_detached_effects:
+        subjects = [
+            _filter_detached_components(
+                subject,
+                max_detached=max_detached_effects,
+                min_detached_area=detached_effect_min_area,
+            )
+            for subject in subjects
+        ]
+    geometry_bounds = [
+        (
+            _largest_component_bounds(subject)
+            if scale_by_largest_component
+            else (0, 0, subject.width, subject.height)
+        )
+        for subject in subjects
+    ]
     normalized_sizes = [
-        (subject.width * scale, subject.height * scale)
-        for subject, scale in zip(subjects, resolved_subject_scales)
+        (
+            (bounds[2] - bounds[0]) * scale,
+            (bounds[3] - bounds[1]) * scale,
+        )
+        for bounds, scale in zip(
+            geometry_bounds,
+            resolved_subject_scales,
+            strict=True,
+        )
     ]
     reference_height = (
         scale_reference_height or normalized_sizes[0][1]
@@ -199,10 +231,12 @@ def _render_subjects(
         raise ValueError("baseline offset count does not match frame count")
     frames: list[Image.Image] = []
 
-    for subject, effective_scale, baseline_offset in zip(
+    for subject, geometry, effective_scale, baseline_offset in zip(
         subjects,
+        geometry_bounds,
         effective_scales,
         resolved_offsets,
+        strict=True,
     ):
         resized = subject.resize(
             (
@@ -212,13 +246,136 @@ def _render_subjects(
             Image.Resampling.LANCZOS,
         )
         canvas = Image.new("RGBA", cell_size)
-        x = (cell_width - resized.width) // 2
-        y = resolved_baseline + baseline_offset - resized.height
-        if y < 0:
-            raise ValueError("scaled subject exceeds the top of its target cell")
+        geometry_left = round(geometry[0] * effective_scale)
+        geometry_right = round(geometry[2] * effective_scale)
+        geometry_bottom = round(geometry[3] * effective_scale)
+        geometry_width = geometry_right - geometry_left
+        x = (cell_width - geometry_width) // 2 - geometry_left
+        y = resolved_baseline + baseline_offset - geometry_bottom
+        if (
+            x < 0
+            or y < 0
+            or x + resized.width > cell_width
+            or y + resized.height > cell_height
+        ):
+            raise ValueError("scaled subject or effects exceed the target cell")
         canvas.alpha_composite(resized, (x, y))
-        frames.append(clean_transparent_edges(canvas, alpha_floor=6))
+        frames.append(
+            clean_transparent_edges(
+                canvas,
+                alpha_floor=6,
+                keep_largest=not preserve_detached_effects,
+            )
+        )
     return frames
+
+
+def _filter_detached_components(
+    subject: Image.Image,
+    *,
+    max_detached: int | None,
+    min_detached_area: int,
+) -> Image.Image:
+    rgba = np.asarray(subject.convert("RGBA"), dtype=np.uint8).copy()
+    visible = rgba[..., 3] > 24
+    visited = np.zeros(visible.shape, dtype=bool)
+    components: list[list[tuple[int, int]]] = []
+
+    for seed_y, seed_x in np.argwhere(visible):
+        y = int(seed_y)
+        x = int(seed_x)
+        if visited[y, x]:
+            continue
+        queue = deque([(y, x)])
+        visited[y, x] = True
+        pixels: list[tuple[int, int]] = []
+        while queue:
+            current_y, current_x = queue.popleft()
+            pixels.append((current_y, current_x))
+            for next_y, next_x in (
+                (current_y - 1, current_x),
+                (current_y + 1, current_x),
+                (current_y, current_x - 1),
+                (current_y, current_x + 1),
+            ):
+                if (
+                    0 <= next_y < visible.shape[0]
+                    and 0 <= next_x < visible.shape[1]
+                    and visible[next_y, next_x]
+                    and not visited[next_y, next_x]
+                ):
+                    visited[next_y, next_x] = True
+                    queue.append((next_y, next_x))
+
+        components.append(pixels)
+
+    if not components:
+        raise ValueError("subject has no visible component")
+    components.sort(key=len, reverse=True)
+    detached = [
+        component
+        for component in components[1:]
+        if len(component) >= min_detached_area
+    ]
+    if max_detached is not None:
+        detached = detached[:max_detached]
+    keep = np.zeros(visible.shape, dtype=bool)
+    for component in [components[0], *detached]:
+        rows, columns = zip(*component)
+        keep[rows, columns] = True
+    rgba[~keep] = 0
+    bounds = Image.fromarray(rgba).getchannel("A").getbbox()
+    if bounds is None:
+        raise ValueError("component filtering removed the subject")
+    return Image.fromarray(rgba).crop(bounds)
+
+
+def _largest_component_bounds(
+    subject: Image.Image,
+) -> tuple[int, int, int, int]:
+    visible = np.asarray(subject.getchannel("A"), dtype=np.uint8) > 24
+    visited = np.zeros(visible.shape, dtype=bool)
+    best_area = 0
+    best_bounds: tuple[int, int, int, int] | None = None
+
+    for seed_y, seed_x in np.argwhere(visible):
+        y = int(seed_y)
+        x = int(seed_x)
+        if visited[y, x]:
+            continue
+        queue = deque([(y, x)])
+        visited[y, x] = True
+        area = 0
+        left = right = x
+        top = bottom = y
+        while queue:
+            current_y, current_x = queue.popleft()
+            area += 1
+            left = min(left, current_x)
+            right = max(right, current_x)
+            top = min(top, current_y)
+            bottom = max(bottom, current_y)
+            for next_y, next_x in (
+                (current_y - 1, current_x),
+                (current_y + 1, current_x),
+                (current_y, current_x - 1),
+                (current_y, current_x + 1),
+            ):
+                if (
+                    0 <= next_y < visible.shape[0]
+                    and 0 <= next_x < visible.shape[1]
+                    and visible[next_y, next_x]
+                    and not visited[next_y, next_x]
+                ):
+                    visited[next_y, next_x] = True
+                    queue.append((next_y, next_x))
+        if area > best_area:
+            best_area = area
+            best_bounds = (left, top, right + 1, bottom + 1)
+
+    if best_bounds is None:
+        raise ValueError("subject has no visible component")
+    return best_bounds
 
 
 def _dark_head_width(subject: Image.Image) -> int:
@@ -310,6 +467,20 @@ def _load_manifest(
                 int(value["target_head_width"])
                 if "target_head_width" in value
                 else None
+            ),
+            scale_by_largest_component=bool(
+                value.get("scale_by_largest_component", False)
+            ),
+            preserve_detached_effects=bool(
+                value.get("preserve_detached_effects", False)
+            ),
+            max_detached_effects=(
+                int(value["max_detached_effects"])
+                if "max_detached_effects" in value
+                else None
+            ),
+            detached_effect_min_area=int(
+                value.get("detached_effect_min_area", 8)
             ),
         )
     return cell_size, columns, rows, specs
@@ -406,6 +577,10 @@ def build_assets_from_manifest(
                     else None
                 ),
                 target_head_width=spec.target_head_width,
+                scale_by_largest_component=spec.scale_by_largest_component,
+                preserve_detached_effects=spec.preserve_detached_effects,
+                max_detached_effects=spec.max_detached_effects,
+                detached_effect_min_area=spec.detached_effect_min_area,
             )
         if spec.first_frame_from:
             reference_frames = generated.get(spec.first_frame_from)

@@ -14,6 +14,7 @@ EXPECTED = {
     "poked.wav",
     "company.wav",
     "rest.wav",
+    "love.wav",
 }
 
 

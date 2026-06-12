@@ -1,6 +1,6 @@
 {
-  "ok": false,
-  "startup_seconds": 3.078,
+  "ok": true,
+  "startup_seconds": 1.282,
   "window_rect": [
     2185,
     1072,
@@ -27,8 +27,8 @@
   "single_instance_secondary_exit_code": 0,
   "tray_message_window_present": true,
   "resources": {
-    "total_cpu_percent": 0.02,
-    "private_memory_mb": 39.25,
-    "working_set_mb": 77.15
+    "total_cpu_percent": 0.039,
+    "private_memory_mb": 38.15,
+    "working_set_mb": 75.79
   }
 }

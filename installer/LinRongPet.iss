@@ -1,5 +1,5 @@
 #define MyAppName "林榕桌宠"
-#define MyAppVersion "1.4.2"
+#define MyAppVersion "1.5.0"
 #define MyAppPublisher "LinRongPet"
 #define MyAppExeName "LinRongPet.exe"
 

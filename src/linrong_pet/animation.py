@@ -54,8 +54,10 @@ class AnimationManifest:
         return manifest
 
     def validate(self) -> None:
-        if (self.columns, self.rows) != (8, 9):
-            raise ValueError("animation atlas contract must use 8x9 cells")
+        if self.columns != 8 or self.rows < 1:
+            raise ValueError(
+                "animation atlas contract must use 8 columns and at least 1 row"
+            )
         if self.cell_width < 192 or self.cell_height < 208:
             raise ValueError("animation cells must be at least 192x208")
         if self.cell_width * 208 != self.cell_height * 192:

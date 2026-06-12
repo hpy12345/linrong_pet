@@ -30,6 +30,7 @@ INTERACTIONS = (
     Interaction("sitting", "poked.wav", "别一直戳我嘛。"),
     Interaction("review", "company.wav", "需要我陪你一会儿吗？"),
     Interaction("running", "rest.wav", "记得让眼睛休息一下哦。"),
+    Interaction("heart", "love.wav", "爱你哦"),
 )
 SITTING_STATE = "sitting"
 AMBIENT_STATES = (
@@ -38,6 +39,7 @@ AMBIENT_STATES = (
     "waiting",
     "running",
     "review",
+    "heart",
 )
 ROAM_INTERVAL_MS = (30_000, 50_000)
 AMBIENT_INTERVAL_MS = (18_000, 32_000)

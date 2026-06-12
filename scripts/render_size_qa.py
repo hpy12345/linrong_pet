@@ -28,7 +28,12 @@ def render(
         sheet = Image.new("RGB", (width * 4, height * 3), "#30343a")
         draw = ImageDraw.Draw(sheet)
         for slot, (state_name, state) in enumerate(states):
-            index = int(state["frames"]) - 1 if state_name == "sitting" else 0
+            if state_name == "sitting":
+                index = int(state["frames"]) - 1
+            elif state_name == "heart":
+                index = 5
+            else:
+                index = 0
             row = int(state["row"])
             frame = atlas.crop(
                 (

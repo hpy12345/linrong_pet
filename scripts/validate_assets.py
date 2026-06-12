@@ -24,6 +24,7 @@ EXPECTED = {
     "waiting": (6, 6),
     "running": (7, 6),
     "review": (8, 6),
+    "heart": (9, 8),
 }
 
 
@@ -35,7 +36,7 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
     rows = int(atlas.get("rows", 0))
     cell_width = int(atlas.get("cell_width", 0))
     cell_height = int(atlas.get("cell_height", 0))
-    if (columns, rows) != (8, 9):
+    if (columns, rows) != (8, 10):
         errors.append("animation.json atlas contract is invalid")
     if cell_width < 384 or cell_height < 416:
         errors.append("animation atlas is below the 2x HD cell contract")
@@ -94,7 +95,7 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
             if alpha.getbbox() is not None:
                 errors.append(f"non-transparent unused cell: {name}[{column}]")
 
-    for name in ("walking-right", "walking-left"):
+    for name in ("walking-right", "walking-left", "heart"):
         digests = {
             hashlib.sha256(frame.tobytes()).digest()
             for frame in state_frames[name]
@@ -119,6 +120,39 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
         for bounds in idle_bounds
         if bounds is not None
     ]
+    heart_bounds = [
+        _largest_component_bounds(frame)
+        for frame in state_frames["heart"]
+    ]
+    if (
+        idle_heights
+        and float(np.median(idle_heights)) > cell_height * 0.5
+    ):
+        idle_height = float(np.median(idle_heights))
+        heart_heights = [
+            bounds[3] - bounds[1]
+            for bounds in heart_bounds
+            if bounds is not None
+        ]
+        if heart_heights and any(
+            abs(height - idle_height) / idle_height > 0.02
+            for height in heart_heights
+        ):
+            errors.append("heart character scale does not match idle")
+        heart_baselines = [
+            bounds[3] for bounds in heart_bounds if bounds is not None
+        ]
+        if (
+            heart_baselines
+            and max(heart_baselines) - min(heart_baselines) > 2
+        ):
+            errors.append("heart character baseline changes between frames")
+        peak_components = _component_areas(state_frames["heart"][5])
+        visible_effects = sum(area >= 8 for area in peak_components) - 1
+        if not 10 <= visible_effects <= 16:
+            errors.append(
+                "heart peak frame must contain 10-16 detached heart effects"
+            )
     sitting_bounds = [
         frame.getchannel("A").getbbox()
         for frame in state_frames["sitting"]
@@ -219,6 +253,83 @@ def _dark_head_width(frame: Image.Image) -> int:
     if columns.size == 0:
         return 0
     return int(columns[-1] - columns[0] + 1)
+
+
+def _component_areas(frame: Image.Image) -> list[int]:
+    visible = np.asarray(frame.getchannel("A"), dtype=np.uint8) > 24
+    visited = np.zeros(visible.shape, dtype=bool)
+    areas: list[int] = []
+    for seed_y, seed_x in np.argwhere(visible):
+        y = int(seed_y)
+        x = int(seed_x)
+        if visited[y, x]:
+            continue
+        stack = [(y, x)]
+        visited[y, x] = True
+        area = 0
+        while stack:
+            current_y, current_x = stack.pop()
+            area += 1
+            for next_y, next_x in (
+                (current_y - 1, current_x),
+                (current_y + 1, current_x),
+                (current_y, current_x - 1),
+                (current_y, current_x + 1),
+            ):
+                if (
+                    0 <= next_y < visible.shape[0]
+                    and 0 <= next_x < visible.shape[1]
+                    and visible[next_y, next_x]
+                    and not visited[next_y, next_x]
+                ):
+                    visited[next_y, next_x] = True
+                    stack.append((next_y, next_x))
+        areas.append(area)
+    return areas
+
+
+def _largest_component_bounds(
+    frame: Image.Image,
+) -> tuple[int, int, int, int] | None:
+    visible = np.asarray(frame.getchannel("A"), dtype=np.uint8) > 24
+    visited = np.zeros(visible.shape, dtype=bool)
+    best_area = 0
+    best_bounds: tuple[int, int, int, int] | None = None
+    for seed_y, seed_x in np.argwhere(visible):
+        y = int(seed_y)
+        x = int(seed_x)
+        if visited[y, x]:
+            continue
+        stack = [(y, x)]
+        visited[y, x] = True
+        area = 0
+        left = right = x
+        top = bottom = y
+        while stack:
+            current_y, current_x = stack.pop()
+            area += 1
+            left = min(left, current_x)
+            right = max(right, current_x)
+            top = min(top, current_y)
+            bottom = max(bottom, current_y)
+            for next_y, next_x in (
+                (current_y - 1, current_x),
+                (current_y + 1, current_x),
+                (current_y, current_x - 1),
+                (current_y, current_x + 1),
+            ):
+                if (
+                    0 <= next_y < visible.shape[0]
+                    and 0 <= next_x < visible.shape[1]
+                    and visible[next_y, next_x]
+                    and not visited[next_y, next_x]
+                ):
+                    visited[next_y, next_x] = True
+                    stack.append((next_y, next_x))
+        if area > best_area:
+            best_area = area
+            best_bounds = (left, top, right + 1, bottom + 1)
+    return best_bounds
 
 
 def main() -> int:

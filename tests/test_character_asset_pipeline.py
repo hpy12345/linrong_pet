@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw
 
 from scripts.refine_character_assets import (
     _dark_head_width,
+    _largest_component_bounds,
     _normalize_transparent_pixels,
     build_assets_from_manifest,
     extract_sequence_frames,
@@ -274,3 +275,30 @@ def test_chroma_key_removes_background_and_keeps_subject():
     assert keyed.getpixel((0, 0))[3] == 0
     assert keyed.getpixel((20, 20))[3] == 255
     assert keyed.getchannel("A").getbbox() == (12, 8, 28, 36)
+
+
+def test_largest_component_geometry_keeps_detached_effects_from_scaling_person():
+    subject = Image.new("RGBA", (300, 650))
+    draw = ImageDraw.Draw(subject)
+    draw.rectangle((100, 50, 199, 649), fill=(210, 170, 140, 255))
+    for x, y in ((20, 40), (260, 80), (25, 300), (270, 360)):
+        draw.rectangle((x, y, x + 11, y + 11), fill=(255, 80, 110, 255))
+    subject = subject.crop(subject.getchannel("A").getbbox())
+
+    from scripts.refine_character_assets import _render_subjects
+
+    frames = _render_subjects(
+        [subject],
+        cell_size=(384, 416),
+        first_frame_height=398,
+        scale_by_largest_component=True,
+        preserve_detached_effects=True,
+        max_detached_effects=4,
+    )
+    person_bounds = _largest_component_bounds(frames[0])
+    full_bounds = frames[0].getchannel("A").getbbox()
+
+    assert abs((person_bounds[3] - person_bounds[1]) - 398) <= 1
+    assert full_bounds is not None
+    assert full_bounds[0] < person_bounds[0]
+    assert full_bounds[2] > person_bounds[2]

@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "animation": "src\\linrong_pet\\assets\\animation.json",
+  "spritesheet": "src\\linrong_pet\\assets\\spritesheet.webp",
+  "atlas_size": [
+    3072,
+    4160
+  ],
+  "errors": []
+}

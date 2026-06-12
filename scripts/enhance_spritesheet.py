@@ -97,13 +97,19 @@ def keep_largest_component(rgba: np.ndarray) -> None:
     rgba[active & ~keep] = 0
 
 
-def clean_transparent_edges(image: Image.Image, alpha_floor: int) -> Image.Image:
+def clean_transparent_edges(
+    image: Image.Image,
+    alpha_floor: int,
+    *,
+    keep_largest: bool = True,
+) -> Image.Image:
     rgba = np.asarray(image.convert("RGBA"), dtype=np.uint8).copy()
     rgb = rgba[..., :3]
     alpha = rgba[..., 3]
 
     alpha[alpha <= alpha_floor] = 0
-    keep_largest_component(rgba)
+    if keep_largest:
+        keep_largest_component(rgba)
     remaining = alpha > 0
     if not remaining.any():
         return Image.fromarray(rgba)

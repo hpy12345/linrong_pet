@@ -57,6 +57,34 @@ def test_click_interaction_plays_animation_audio_and_bubble(
     assert not controller._interaction_active
 
 
+def test_heart_click_plays_love_voice_and_bubble(
+    qtbot, tmp_path, monkeypatch, request
+):
+    controller = make_controller(tmp_path, monkeypatch, request)
+    qtbot.addWidget(controller.window)
+    interaction = next(
+        item for item in INTERACTIONS if item.state == "heart"
+    )
+    played = []
+    messages = []
+    monkeypatch.setattr(controller_module.random, "choice", lambda _: interaction)
+    monkeypatch.setattr(controller.audio, "play", played.append)
+    monkeypatch.setattr(
+        controller.bubble,
+        "show_message",
+        lambda text, anchor: messages.append((text, anchor)),
+    )
+
+    controller.interact()
+
+    assert controller.player.state_name == "heart"
+    assert played == ["love.wav"]
+    assert messages[0][0] == "爱你哦"
+
+    controller._animation_finished("heart")
+    assert controller.player.state_name == "idle"
+
+
 def test_roaming_moves_on_primary_screen_floor(
     qtbot, tmp_path, monkeypatch, request
 ):
@@ -118,7 +146,7 @@ def test_ambient_action_runs_without_click_or_audio(
     qtbot.addWidget(controller.window)
     played = []
     messages = []
-    monkeypatch.setattr(controller_module.random, "choice", lambda _: "jumping")
+    monkeypatch.setattr(controller_module.random, "choice", lambda _: "heart")
     monkeypatch.setattr(
         controller_module,
         "AMBIENT_INTERVAL_MS",
@@ -133,18 +161,19 @@ def test_ambient_action_runs_without_click_or_audio(
 
     controller.schedule_ambient_action()
     qtbot.waitUntil(
-        lambda: controller.player.state_name == "jumping",
+        lambda: controller.player.state_name == "heart",
         timeout=1000,
     )
 
-    assert controller.player.state_name == "jumping"
+    assert controller.player.state_name == "heart"
     assert controller._interaction_active
     assert not controller.roam_timer.isActive()
     assert played == []
     assert messages == []
     assert controller_module.SITTING_STATE not in AMBIENT_STATES
+    assert "heart" in AMBIENT_STATES
 
-    controller._animation_finished("jumping")
+    controller._animation_finished("heart")
 
     assert controller.player.state_name == "idle"
     assert not controller._interaction_active

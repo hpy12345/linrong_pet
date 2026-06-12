@@ -19,12 +19,14 @@ def test_production_animation_manifest():
         / "animation.json"
     )
     manifest = AnimationManifest.load(path)
-    assert (manifest.columns, manifest.rows) == (8, 9)
+    assert (manifest.columns, manifest.rows) == (8, 10)
     assert (manifest.cell_width, manifest.cell_height) == (384, 416)
     assert manifest.states["idle"].frames == 6
     assert manifest.states["walking-right"].frames == 8
     assert manifest.states["walking-left"].frames == 8
     assert manifest.states["review"].row == 8
+    assert manifest.states["heart"].row == 9
+    assert manifest.states["heart"].frames == 8
     idle_durations = manifest.states["idle"].durations_ms
     assert 5800 <= sum(idle_durations) <= 6500
     assert idle_durations[0] >= 5000

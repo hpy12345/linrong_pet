@@ -20,6 +20,7 @@ LINES = {
     "poked.wav": "别一直戳我嘛。",
     "company.wav": "需要我陪你一会儿吗？",
     "rest.wav": "记得让眼睛休息一下哦。",
+    "love.wav": "爱你哦",
 }
 
 
@@ -46,11 +47,16 @@ def normalized_samples(samples: array, sample_rate: int) -> array:
     return result
 
 
-async def synthesize(output_dir: Path) -> None:
+async def synthesize(
+    output_dir: Path,
+    selected: set[str] | None = None,
+) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="linrong-voice-") as temp:
         temp_dir = Path(temp)
         for filename, text in LINES.items():
+            if selected is not None and filename not in selected:
+                continue
             media_path = temp_dir / filename.replace(".wav", ".mp3")
             communicator = edge_tts.Communicate(
                 text,
@@ -85,10 +91,16 @@ def main() -> int:
         type=Path,
         default=Path("src/linrong_pet/assets/audio"),
     )
+    parser.add_argument(
+        "--only",
+        action="append",
+        choices=sorted(LINES),
+        help="Generate only the selected WAV file; may be repeated.",
+    )
     args = parser.parse_args()
     if sys.platform == "win32":
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-    asyncio.run(synthesize(args.output_dir))
+    asyncio.run(synthesize(args.output_dir, set(args.only) if args.only else None))
     return 0
 
 
