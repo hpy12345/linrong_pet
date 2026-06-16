@@ -13,7 +13,12 @@ from .audio import AudioPlayer
 from .bubble import SpeechBubble
 from .paths import asset_path
 from .pet_window import PetWindow
-from .settings import ALLOWED_HEIGHTS, PetSettings, SettingsStore
+from .settings import (
+    ALLOWED_HEIGHTS,
+    PetSettings,
+    SettingsStore,
+    clamp_attention_minutes,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -25,17 +30,19 @@ class Interaction:
 
 INTERACTIONS = (
     Interaction("waving", "hello.wav", "你好呀，我是林榕。"),
-    Interaction("jumping", "happy.wav", "见到你真开心。"),
     Interaction("waiting", "found.wav", "呀，你找到我啦。"),
     Interaction("sitting", "poked.wav", "别一直戳我嘛。"),
     Interaction("review", "company.wav", "需要我陪你一会儿吗？"),
     Interaction("running", "rest.wav", "记得让眼睛休息一下哦。"),
     Interaction("heart", "love.wav", "爱你哦"),
+    Interaction("hug", "hug.wav", "主人，来陪我玩嘛"),
 )
 SITTING_STATE = "sitting"
+ATTENTION_STATE = "hug"
+ATTENTION_AUDIO = "hug.wav"
+ATTENTION_TEXT = "主人，来陪我玩嘛"
 AMBIENT_STATES = (
     "waving",
-    "jumping",
     "waiting",
     "running",
     "review",
@@ -44,6 +51,7 @@ AMBIENT_STATES = (
 ROAM_INTERVAL_MS = (30_000, 50_000)
 AMBIENT_INTERVAL_MS = (18_000, 32_000)
 ROAM_DISTANCE_PX = (160, 420)
+ATTENTION_RECHECK_MS = 60_000
 
 
 class PetController(QObject):
@@ -52,6 +60,7 @@ class PetController(QObject):
     muted_changed = Signal(bool)
     size_changed = Signal(int)
     autostart_changed = Signal(bool)
+    attention_delay_changed = Signal(int)
 
     def __init__(self, store: SettingsStore | None = None) -> None:
         super().__init__()
@@ -80,6 +89,10 @@ class PetController(QObject):
         self._move_progress = 0.0
         self._move_distance = 0.0
         self._last_ambient_state: str | None = None
+        self._attention_active = False
+        self._attention_after_move = False
+        self._activity_generation = 0
+        self._attention_activity_generation: int | None = None
 
         self.move_timer = QTimer(self)
         self.move_timer.setTimerType(Qt.PreciseTimer)
@@ -94,6 +107,9 @@ class PetController(QObject):
         self.resume_timer = QTimer(self)
         self.resume_timer.setSingleShot(True)
         self.resume_timer.timeout.connect(self._resume_autonomous_activity)
+        self.attention_timer = QTimer(self)
+        self.attention_timer.setSingleShot(True)
+        self.attention_timer.timeout.connect(self._start_attention_request)
         self.hover_timer = QTimer(self)
         self.hover_timer.setSingleShot(True)
         self.hover_timer.timeout.connect(self._hover_reaction)
@@ -118,6 +134,7 @@ class PetController(QObject):
         self.window.raise_()
         self.schedule_roaming()
         self.schedule_ambient_action()
+        self.schedule_attention_request()
 
     def _restore_position(self) -> None:
         bounds = self.window.available_geometry()
@@ -140,6 +157,7 @@ class PetController(QObject):
         self.roam_timer.stop()
         self.ambient_timer.stop()
         self.resume_timer.stop()
+        self.attention_timer.stop()
         self.hover_timer.stop()
         self.player.timer.stop()
         self.audio.stop()
@@ -175,9 +193,35 @@ class PetController(QObject):
         ):
             self.ambient_timer.start(random.randint(*AMBIENT_INTERVAL_MS))
 
+    def schedule_attention_request(self, *, repeat: bool = False) -> None:
+        self.attention_timer.stop()
+        if (
+            self.settings.attention_enabled
+            and self.window.isVisible()
+            and not self._interaction_active
+            and not self._dragging
+            and not self._seated
+            and not self._sitting_down
+            and not self._standing_up
+        ):
+            minutes = (
+                self.settings.attention_repeat_minutes
+                if repeat
+                else self.settings.attention_delay_minutes
+            )
+            self.attention_timer.start(minutes * 60_000)
+
     def _resume_autonomous_activity(self) -> None:
         self.schedule_roaming()
         self.schedule_ambient_action()
+        self.schedule_attention_request()
+
+    def _record_user_activity(self) -> None:
+        self._activity_generation += 1
+        self._attention_active = False
+        self._attention_after_move = False
+        self._attention_activity_generation = None
+        self.attention_timer.stop()
 
     def start_roaming(self) -> None:
         if (
@@ -271,11 +315,17 @@ class PetController(QObject):
     def _stop_roaming(self) -> None:
         self.move_timer.stop()
         self._target = None
+        if self._attention_after_move:
+            self._attention_after_move = False
+            self._play_attention_request()
+            return
         if not self._interaction_active and not self._seated:
             self.player.play("idle", repeat=True)
         self.save()
         self.schedule_roaming()
         self.schedule_ambient_action()
+        if not self.attention_timer.isActive():
+            self.schedule_attention_request()
 
     def _start_ambient_action(self) -> None:
         if (
@@ -300,7 +350,70 @@ class PetController(QObject):
         self._interaction_active = True
         self.player.play(state, repeat=False)
 
+    def _start_attention_request(self) -> None:
+        self.attention_timer.stop()
+        if not self.settings.attention_enabled or not self.window.isVisible():
+            return
+        if (
+            self._interaction_active
+            or self._dragging
+            or self._seated
+            or self._sitting_down
+            or self._standing_up
+        ):
+            self.attention_timer.start(ATTENTION_RECHECK_MS)
+            return
+        bounds = self.window.available_geometry()
+        target_x = bounds.left() + (bounds.width() - self.window.width()) // 2
+        target = self.window.clamped_position(
+            QPoint(target_x, self.window.floor_y())
+        )
+
+        self.move_timer.stop()
+        self.roam_timer.stop()
+        self.ambient_timer.stop()
+        self.resume_timer.stop()
+        self._attention_active = True
+        self._attention_after_move = False
+        self._attention_activity_generation = self._activity_generation
+        self._interaction_active = True
+        self._target = target
+
+        current = self.window.pos()
+        self._move_origin = current
+        self._move_progress = 0.0
+        self._move_distance = math.hypot(
+            target.x() - current.x(),
+            target.y() - current.y(),
+        )
+        if self._move_distance <= 4:
+            self.window.move(target)
+            self._target = None
+            self._play_attention_request()
+            return
+        self._speed = 95.0
+        self._attention_after_move = True
+        self.player.play(
+            "walking-right" if target.x() >= current.x() else "walking-left",
+            repeat=True,
+        )
+        self.move_timer.start()
+
+    def _play_attention_request(self) -> None:
+        self.move_timer.stop()
+        self.roam_timer.stop()
+        self.ambient_timer.stop()
+        self.resume_timer.stop()
+        self.attention_timer.stop()
+        self._target = None
+        self._attention_active = True
+        self._interaction_active = True
+        self.audio.play(ATTENTION_AUDIO)
+        self.bubble.show_message(ATTENTION_TEXT, self.window.geometry())
+        self.player.play(ATTENTION_STATE, repeat=False)
+
     def interact(self) -> None:
+        self._record_user_activity()
         if self._sitting_down or self._standing_up:
             return
         if self._seated:
@@ -309,6 +422,7 @@ class PetController(QObject):
         self.move_timer.stop()
         self.roam_timer.stop()
         self.ambient_timer.stop()
+        self.attention_timer.stop()
         self._target = None
         self._interaction_active = True
         interaction = random.choice(INTERACTIONS)
@@ -323,6 +437,7 @@ class PetController(QObject):
         self.roam_timer.stop()
         self.ambient_timer.stop()
         self.resume_timer.stop()
+        self.attention_timer.stop()
         self._target = None
         self._seated = False
         self._standing_up = True
@@ -343,6 +458,7 @@ class PetController(QObject):
             return
         self.roam_timer.stop()
         self.ambient_timer.stop()
+        self._record_user_activity()
         self._interaction_active = True
         self.player.play("review", repeat=False)
 
@@ -355,12 +471,19 @@ class PetController(QObject):
             return
         if state == SITTING_STATE and self._standing_up:
             self._standing_up = False
+        repeat_attention = state == ATTENTION_STATE and self._attention_active
+        self._attention_active = False
+        self._attention_after_move = False
+        self._attention_activity_generation = None
         self._interaction_active = False
         self.player.play("idle", repeat=True)
         self.schedule_roaming()
         self.schedule_ambient_action()
+        if repeat_attention or not self.attention_timer.isActive():
+            self.schedule_attention_request(repeat=repeat_attention)
 
     def _drag_started(self) -> None:
+        self._record_user_activity()
         self._dragging = True
         self._interaction_active = False
         self._standing_up = False
@@ -368,6 +491,7 @@ class PetController(QObject):
         self.roam_timer.stop()
         self.ambient_timer.stop()
         self.resume_timer.stop()
+        self.attention_timer.stop()
         self._target = None
         self.bubble.hide()
         self.audio.stop()
@@ -389,6 +513,7 @@ class PetController(QObject):
         self.save()
         if not self._seated:
             self.resume_timer.start(2000)
+            self.schedule_attention_request()
 
     def _screen_changed(self, _geometry=None) -> None:
         self.window.clamp_to_primary_screen()
@@ -401,12 +526,14 @@ class PetController(QObject):
         self.visibility_changed.emit(True)
         self.schedule_roaming()
         self.schedule_ambient_action()
+        self.schedule_attention_request()
 
     def hide_pet(self) -> None:
         self.move_timer.stop()
         self.roam_timer.stop()
         self.ambient_timer.stop()
         self.resume_timer.stop()
+        self.attention_timer.stop()
         self.bubble.hide()
         self.window.hide()
         self.visibility_changed.emit(False)
@@ -443,6 +570,7 @@ class PetController(QObject):
     def set_pet_height(self, height: int) -> None:
         if height not in ALLOWED_HEIGHTS:
             return
+        self._record_user_activity()
         bottom_right = self.window.geometry().bottomRight()
         self.settings.pet_height = height
         self.window.set_pet_height(height)
@@ -458,6 +586,19 @@ class PetController(QObject):
         )
         self.save()
         self.size_changed.emit(height)
+        self.schedule_attention_request()
+
+    def set_attention_delay_minutes(self, minutes: int) -> None:
+        value = clamp_attention_minutes(
+            minutes,
+            self.settings.attention_delay_minutes,
+        )
+        self._record_user_activity()
+        self.settings.attention_delay_minutes = value
+        self.settings.attention_repeat_minutes = value
+        self.save()
+        self.schedule_attention_request()
+        self.attention_delay_changed.emit(value)
 
     def set_autostart_enabled(self, enabled: bool) -> None:
         actual = autostart.set_enabled(enabled)

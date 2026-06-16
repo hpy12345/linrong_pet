@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "reference": "../../role.png",
+  "canonical_base": "../repair-v1.4/canonical-base-transparent.png",
+  "atlas": {
+    "columns": 8,
+    "rows": 9,
+    "cell_width": 384,
+    "cell_height": 416
+  },
+  "baseline": 407,
+  "states": {
+    "idle": {
+      "row": 0,
+      "frames": 6,
+      "source": "../repair-v1.4/idle-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "walking-right": {
+      "row": 1,
+      "frames": 8,
+      "source": "../repair-v1.4/walking-right-transparent.png",
+      "target_first_frame_height": 382,
+      "max_width_ratio": 0.92
+    },
+    "walking-left": {
+      "row": 2,
+      "frames": 8,
+      "mirror_of": "walking-right",
+      "target_first_frame_height": 382
+    },
+    "waving": {
+      "row": 3,
+      "frames": 4,
+      "source": "../repair-v1.4/waving-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "sitting": {
+      "row": 4,
+      "frames": 8,
+      "source": "../repair-v1.4/sitting-transparent.png",
+      "frame_source_scales": [
+        1.0,
+        1.135593,
+        1.098361,
+        1.098361,
+        1.098361,
+        1.116667,
+        1.116667,
+        1.098361
+      ],
+      "target_first_frame_height": 398,
+      "scale_reference": "idle",
+      "first_frame_from": "idle"
+    },
+    "waiting": {
+      "row": 5,
+      "frames": 6,
+      "source": "../repair-v1.4/waiting-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "running": {
+      "row": 6,
+      "frames": 6,
+      "source": "../repair-v1.4/running-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "review": {
+      "row": 7,
+      "frames": 6,
+      "source": "../repair-v1.4/review-transparent.png",
+      "target_first_frame_height": 398
+    },
+    "heart": {
+      "row": 8,
+      "frames": 8,
+      "source": "../repair-v1.5/heart-transparent.png",
+      "target_first_frame_height": 398,
+      "max_width_ratio": 0.92,
+      "scale_by_largest_component": true,
+      "preserve_detached_effects": true,
+      "max_detached_effects": 16,
+      "detached_effect_min_area": 8
+    }
+  }
+}

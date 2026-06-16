@@ -68,7 +68,7 @@ Assert-LastExitCode "Exporting memory-efficient runtime frames"
 & $Python (Join-Path $Root "scripts\render_animation_qa.py") `
     --animation (Join-Path $Root "src\linrong_pet\assets\animation.json") `
     --spritesheet (Join-Path $Root "src\linrong_pet\assets\spritesheet.webp") `
-    --output-dir (Join-Path $Root "build\qa\previews-v1.5")
+    --output-dir (Join-Path $Root "build\qa\previews-v1.6.1")
 Assert-LastExitCode "Rendering animation QA previews"
 
 if (-not $SkipTests) {

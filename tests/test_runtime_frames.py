@@ -19,7 +19,7 @@ def test_runtime_frames_match_animation_manifest():
         for index in range(state["frames"])
     }
     frame_dir = assets / "frames"
-    assert len(expected) == 65
+    assert len(expected) == 68
     assert {path.name for path in frame_dir.glob("*.webp")} == expected
     for path in frame_dir.glob("*.webp"):
         with Image.open(path) as frame:

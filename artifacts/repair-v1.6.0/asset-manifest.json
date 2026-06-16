@@ -1,0 +1,164 @@
+{
+  "version": "1.6.0",
+  "atlas": {
+    "columns": 8,
+    "rows": 10,
+    "cell_width": 384,
+    "cell_height": 416
+  },
+  "states": {
+    "idle": {
+      "row": 0,
+      "frames": 6,
+      "durations_ms": [
+        5650,
+        75,
+        55,
+        50,
+        60,
+        90
+      ],
+      "loop": true
+    },
+    "walking-right": {
+      "row": 1,
+      "frames": 8,
+      "durations_ms": [
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95
+      ],
+      "loop": true
+    },
+    "walking-left": {
+      "row": 2,
+      "frames": 8,
+      "durations_ms": [
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95
+      ],
+      "loop": true
+    },
+    "waving": {
+      "row": 3,
+      "frames": 4,
+      "durations_ms": [
+        115,
+        115,
+        115,
+        220
+      ],
+      "loop": false
+    },
+    "sitting": {
+      "row": 4,
+      "frames": 8,
+      "durations_ms": [
+        115,
+        115,
+        120,
+        120,
+        125,
+        125,
+        130,
+        220
+      ],
+      "loop": false
+    },
+    "waiting": {
+      "row": 5,
+      "frames": 6,
+      "durations_ms": [
+        125,
+        125,
+        125,
+        125,
+        125,
+        220
+      ],
+      "loop": false
+    },
+    "running": {
+      "row": 6,
+      "frames": 6,
+      "durations_ms": [
+        105,
+        105,
+        105,
+        105,
+        105,
+        190
+      ],
+      "loop": false
+    },
+    "review": {
+      "row": 7,
+      "frames": 6,
+      "durations_ms": [
+        125,
+        125,
+        125,
+        125,
+        125,
+        220
+      ],
+      "loop": false
+    },
+    "heart": {
+      "row": 8,
+      "frames": 8,
+      "durations_ms": [
+        110,
+        110,
+        120,
+        150,
+        210,
+        180,
+        150,
+        260
+      ],
+      "loop": false
+    },
+    "hug": {
+      "row": 9,
+      "frames": 8,
+      "durations_ms": [
+        120,
+        140,
+        170,
+        220,
+        470,
+        420,
+        320,
+        260
+      ],
+      "loop": false
+    }
+  },
+  "source": {
+    "base_spritesheet": "D:\\linrong_pet\\src\\linrong_pet\\assets\\spritesheet.webp",
+    "identity_reference": "D:\\linrong_pet\\role.png",
+    "hug_sources": [
+      "idle-00",
+      "waiting-01",
+      "heart-01",
+      "waiting-04 scaled on fixed baseline"
+    ]
+  },
+  "notes": [
+    "hug row derives from approved same-identity production frames, not a face overlay.",
+    "peak hug frames keep one scale ratio per frame with fixed foot baseline.",
+    "runtime interface remains 384x416 cells with 8 columns."
+  ]
+}

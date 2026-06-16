@@ -1,10 +1,14 @@
 from __future__ import annotations
 
 from PySide6.QtGui import QAction, QActionGroup, QIcon
-from PySide6.QtWidgets import QApplication, QMenu, QSystemTrayIcon
+from PySide6.QtWidgets import QApplication, QInputDialog, QMenu, QSystemTrayIcon
 
 from .controller import PetController
-from .settings import ALLOWED_HEIGHTS
+from .settings import (
+    ALLOWED_HEIGHTS,
+    MAX_ATTENTION_DELAY_MINUTES,
+    MIN_ATTENTION_DELAY_MINUTES,
+)
 
 
 class PetTrayIcon(QSystemTrayIcon):
@@ -21,6 +25,11 @@ class PetTrayIcon(QSystemTrayIcon):
         self.roaming_action.setCheckable(True)
         self.roaming_action.setChecked(controller.settings.roaming_enabled)
         self.roaming_action.toggled.connect(controller.set_roaming_enabled)
+
+        self.attention_delay_action = menu.addAction(
+            self._attention_delay_label(controller.settings.attention_delay_minutes)
+        )
+        self.attention_delay_action.triggered.connect(self._set_attention_delay)
 
         size_menu = menu.addMenu("角色大小")
         self.size_actions: dict[int, QAction] = {}
@@ -58,6 +67,11 @@ class PetTrayIcon(QSystemTrayIcon):
         controller.muted_changed.connect(self._sync_muted)
         controller.size_changed.connect(self._sync_size)
         controller.autostart_changed.connect(self._sync_autostart)
+        controller.attention_delay_changed.connect(self._sync_attention_delay)
+
+    @staticmethod
+    def _attention_delay_label(minutes: int) -> str:
+        return f"无互动求关注时间：{minutes} 分钟"
 
     def _activated(self, reason: QSystemTrayIcon.ActivationReason) -> None:
         if reason == QSystemTrayIcon.Trigger:
@@ -83,6 +97,22 @@ class PetTrayIcon(QSystemTrayIcon):
         self.autostart_action.blockSignals(True)
         self.autostart_action.setChecked(enabled)
         self.autostart_action.blockSignals(False)
+
+    def _sync_attention_delay(self, minutes: int) -> None:
+        self.attention_delay_action.setText(self._attention_delay_label(minutes))
+
+    def _set_attention_delay(self) -> None:
+        minutes, accepted = QInputDialog.getInt(
+            None,
+            "设置求关注时间",
+            "无互动多少分钟后主动求抱抱：",
+            self.controller.settings.attention_delay_minutes,
+            MIN_ATTENTION_DELAY_MINUTES,
+            MAX_ATTENTION_DELAY_MINUTES,
+            1,
+        )
+        if accepted:
+            self.controller.set_attention_delay_minutes(minutes)
 
     def _exit(self) -> None:
         self.controller.save()

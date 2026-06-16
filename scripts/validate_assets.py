@@ -19,12 +19,12 @@ EXPECTED = {
     "walking-right": (1, 8),
     "walking-left": (2, 8),
     "waving": (3, 4),
-    "jumping": (4, 5),
-    "sitting": (5, 8),
-    "waiting": (6, 6),
-    "running": (7, 6),
-    "review": (8, 6),
-    "heart": (9, 8),
+    "sitting": (4, 8),
+    "waiting": (5, 6),
+    "running": (6, 6),
+    "review": (7, 6),
+    "heart": (8, 8),
+    "hug": (9, 8),
 }
 
 
@@ -43,6 +43,11 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
     if cell_width * 208 != cell_height * 192:
         errors.append("animation cell aspect ratio is invalid")
     states = manifest.get("states", {})
+    if set(states) != set(EXPECTED):
+        errors.append(
+            f"animation states are {sorted(states)}, "
+            f"expected {sorted(EXPECTED)}"
+        )
     for name, (row, frames) in EXPECTED.items():
         value = states.get(name)
         if value is None:
@@ -95,7 +100,7 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
             if alpha.getbbox() is not None:
                 errors.append(f"non-transparent unused cell: {name}[{column}]")
 
-    for name in ("walking-right", "walking-left", "heart"):
+    for name in ("walking-right", "walking-left", "heart", "hug"):
         digests = {
             hashlib.sha256(frame.tobytes()).digest()
             for frame in state_frames[name]
@@ -153,6 +158,23 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
             errors.append(
                 "heart peak frame must contain 10-16 detached heart effects"
             )
+        hug_bounds = [
+            _largest_component_bounds(frame)
+            for frame in state_frames["hug"]
+        ]
+        hug_heights = [
+            bounds[3] - bounds[1]
+            for bounds in hug_bounds
+            if bounds is not None
+        ]
+        if hug_heights and any(
+            abs(height - idle_height) / idle_height > 0.025
+            for height in hug_heights
+        ):
+            errors.append("hug character scale does not match idle")
+        hug_baselines = [bounds[3] for bounds in hug_bounds if bounds is not None]
+        if hug_baselines and max(hug_baselines) - min(hug_baselines) > 3:
+            errors.append("hug character baseline changes between frames")
     sitting_bounds = [
         frame.getchannel("A").getbbox()
         for frame in state_frames["sitting"]
@@ -193,25 +215,6 @@ def validate(animation_path: Path, spritesheet_path: Path) -> list[str]:
         ):
             errors.append("sitting face scale changes excessively")
 
-    idle_hair_widths = [
-        _dark_head_width(frame)
-        for frame in state_frames["idle"]
-    ]
-    jumping_hair_widths = [
-        _dark_head_width(frame)
-        for frame in state_frames["jumping"]
-    ]
-    if (
-        min(idle_hair_widths, default=0) > 0
-        and min(jumping_hair_widths, default=0) > 0
-    ):
-        idle_hair_width = float(np.median(idle_hair_widths))
-        jumping_hair_width = float(np.median(jumping_hair_widths))
-        if abs(jumping_hair_width - idle_hair_width) / idle_hair_width > 0.15:
-            errors.append("jumping face scale does not match idle")
-        if max(jumping_hair_widths) > min(jumping_hair_widths) * 1.18:
-            errors.append("jumping face scale changes excessively")
-
     pixels = np.asarray(rgba, dtype=np.uint8)
     alpha = pixels[..., 3]
     cast = suspicious_edge_color(pixels[..., :3]) & (alpha > 0)
@@ -230,26 +233,6 @@ def _head_width(
     sample_bottom = min(alpha.shape[0], top + round(reference_height * 0.22))
     region = alpha[top:sample_bottom, left:right] > 16
     columns = np.where(region.any(axis=0))[0]
-    if columns.size == 0:
-        return 0
-    return int(columns[-1] - columns[0] + 1)
-
-
-def _dark_head_width(frame: Image.Image) -> int:
-    bounds = frame.getchannel("A").getbbox()
-    if bounds is None:
-        return 0
-    crop = np.asarray(frame.crop(bounds).convert("RGBA"), dtype=np.uint8)
-    sample_height = min(
-        crop.shape[0],
-        max(1, round(crop.shape[1] * 0.42)),
-    )
-    sample = crop[:sample_height]
-    dark_hair = (
-        (sample[..., :3].mean(axis=2) < 90)
-        & (sample[..., 3] > 128)
-    )
-    columns = np.where(dark_hair.any(axis=0))[0]
     if columns.size == 0:
         return 0
     return int(columns[-1] - columns[0] + 1)

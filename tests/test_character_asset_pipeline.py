@@ -123,7 +123,7 @@ def test_manifest_build_accepts_individual_frame_sources(tmp_path):
             "cell_height": 416
           }},
           "states": {{
-            "jumping": {{
+            "pose": {{
               "row": 0,
               "frames": 2,
               "frame_sources": {frame_paths!r},
@@ -170,7 +170,7 @@ def test_individual_frame_source_scales_normalize_pixel_density(tmp_path):
             "cell_height": 416
           }},
           "states": {{
-            "jumping": {{
+            "pose": {{
               "row": 0,
               "frames": 2,
               "frame_sources": {frame_paths!r},

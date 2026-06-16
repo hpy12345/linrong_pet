@@ -11,6 +11,10 @@ from .paths import settings_path
 
 
 ALLOWED_HEIGHTS = (240, 320, 400)
+DEFAULT_ATTENTION_DELAY_MINUTES = 5
+DEFAULT_ATTENTION_REPEAT_MINUTES = 5
+MIN_ATTENTION_DELAY_MINUTES = 5
+MAX_ATTENTION_DELAY_MINUTES = 1440
 
 
 @dataclass(slots=True)
@@ -20,6 +24,9 @@ class PetSettings:
     muted: bool = False
     pet_height: int = 320
     autostart_enabled: bool = False
+    attention_enabled: bool = True
+    attention_delay_minutes: int = DEFAULT_ATTENTION_DELAY_MINUTES
+    attention_repeat_minutes: int = DEFAULT_ATTENTION_REPEAT_MINUTES
     last_x: int | None = None
     last_y: int | None = None
 
@@ -34,6 +41,19 @@ class PetSettings:
             muted=bool(raw.get("muted", False)),
             pet_height=height,
             autostart_enabled=bool(raw.get("autostart_enabled", False)),
+            attention_enabled=bool(raw.get("attention_enabled", True)),
+            attention_delay_minutes=_attention_minutes_from_settings(
+                raw,
+                "attention_delay_minutes",
+                "attention_delay_seconds",
+                DEFAULT_ATTENTION_DELAY_MINUTES,
+            ),
+            attention_repeat_minutes=_attention_minutes_from_settings(
+                raw,
+                "attention_repeat_minutes",
+                "attention_repeat_seconds",
+                DEFAULT_ATTENTION_REPEAT_MINUTES,
+            ),
             last_x=_optional_int(raw.get("last_x")),
             last_y=_optional_int(raw.get("last_y")),
         )
@@ -41,6 +61,30 @@ class PetSettings:
 
 def _optional_int(value: Any) -> int | None:
     return value if isinstance(value, int) and not isinstance(value, bool) else None
+
+
+def clamp_attention_minutes(value: Any, default: int) -> int:
+    if not isinstance(value, int) or isinstance(value, bool):
+        return default
+    return max(
+        MIN_ATTENTION_DELAY_MINUTES,
+        min(MAX_ATTENTION_DELAY_MINUTES, value),
+    )
+
+
+def _attention_minutes_from_settings(
+    raw: dict[str, Any],
+    minutes_key: str,
+    legacy_seconds_key: str,
+    default: int,
+) -> int:
+    if minutes_key in raw:
+        return clamp_attention_minutes(raw.get(minutes_key), default)
+    legacy_seconds = raw.get(legacy_seconds_key)
+    if isinstance(legacy_seconds, int) and not isinstance(legacy_seconds, bool):
+        minutes = max(0, legacy_seconds + 59) // 60
+        return clamp_attention_minutes(minutes, default)
+    return default
 
 
 class SettingsStore:

@@ -24,9 +24,24 @@ def test_production_animation_manifest():
     assert manifest.states["idle"].frames == 6
     assert manifest.states["walking-right"].frames == 8
     assert manifest.states["walking-left"].frames == 8
-    assert manifest.states["review"].row == 8
-    assert manifest.states["heart"].row == 9
+    assert set(manifest.states) == {
+        "idle",
+        "walking-right",
+        "walking-left",
+        "waving",
+        "sitting",
+        "waiting",
+        "running",
+        "review",
+        "heart",
+        "hug",
+    }
+    assert manifest.states["sitting"].row == 4
+    assert manifest.states["review"].row == 7
+    assert manifest.states["heart"].row == 8
     assert manifest.states["heart"].frames == 8
+    assert manifest.states["hug"].row == 9
+    assert manifest.states["hug"].frames == 8
     idle_durations = manifest.states["idle"].durations_ms
     assert 5800 <= sum(idle_durations) <= 6500
     assert idle_durations[0] >= 5000

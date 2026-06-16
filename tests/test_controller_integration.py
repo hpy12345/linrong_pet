@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from PySide6.QtCore import QPoint
 from PySide6.QtGui import QIcon
 
 import linrong_pet.controller as controller_module
+import linrong_pet.tray as tray_module
 from linrong_pet.controller import (
     AMBIENT_INTERVAL_MS,
     AMBIENT_STATES,
@@ -24,6 +27,7 @@ def make_controller(tmp_path, monkeypatch, request) -> PetController:
     controller.roam_timer.stop()
     controller.ambient_timer.stop()
     controller.resume_timer.stop()
+    controller.attention_timer.stop()
     controller.move_timer.stop()
     request.addfinalizer(controller.shutdown)
     return controller
@@ -85,6 +89,28 @@ def test_heart_click_plays_love_voice_and_bubble(
     assert controller.player.state_name == "idle"
 
 
+def test_interactions_and_ambient_states_reference_existing_assets(
+    qtbot, tmp_path, monkeypatch, request
+):
+    controller = make_controller(tmp_path, monkeypatch, request)
+    qtbot.addWidget(controller.window)
+    states = set(controller.manifest.states)
+    audio_dir = (
+        Path(__file__).parents[1]
+        / "src"
+        / "linrong_pet"
+        / "assets"
+        / "audio"
+    )
+    audio_files = {path.name for path in audio_dir.glob("*.wav")}
+
+    assert {item.state for item in INTERACTIONS} <= states
+    assert set(AMBIENT_STATES) <= states
+    assert {item.audio for item in INTERACTIONS} == audio_files
+    assert len(states) == 10
+    assert len(audio_files) == 7
+
+
 def test_roaming_moves_on_primary_screen_floor(
     qtbot, tmp_path, monkeypatch, request
 ):
@@ -132,11 +158,16 @@ def test_autonomous_timers_use_relaxed_intervals(
 
     controller.schedule_roaming()
     controller.schedule_ambient_action()
+    controller.schedule_attention_request()
 
     assert controller.roam_timer.interval() == ROAM_INTERVAL_MS[0]
     assert controller.ambient_timer.interval() == AMBIENT_INTERVAL_MS[0]
+    assert controller.attention_timer.interval() == (
+        controller.settings.attention_delay_minutes * 60_000
+    )
     assert controller.roam_timer.isActive()
     assert controller.ambient_timer.isActive()
+    assert controller.attention_timer.isActive()
 
 
 def test_ambient_action_runs_without_click_or_audio(
@@ -178,6 +209,79 @@ def test_ambient_action_runs_without_click_or_audio(
     assert controller.player.state_name == "idle"
     assert not controller._interaction_active
     assert controller.ambient_timer.isActive()
+
+
+def test_idle_attention_walks_to_center_then_plays_hug_voice(
+    qtbot, tmp_path, monkeypatch, request
+):
+    controller = make_controller(tmp_path, monkeypatch, request)
+    qtbot.addWidget(controller.window)
+    controller.settings.attention_repeat_minutes = 6
+    bounds = controller.window.available_geometry()
+    start = QPoint(bounds.left(), controller.window.floor_y())
+    controller.window.move(start)
+    played = []
+    messages = []
+    monkeypatch.setattr(controller.audio, "play", played.append)
+    monkeypatch.setattr(
+        controller.bubble,
+        "show_message",
+        lambda text, anchor: messages.append((text, anchor)),
+    )
+
+    controller._start_attention_request()
+
+    target_x = bounds.left() + (bounds.width() - controller.window.width()) // 2
+    assert controller._target == controller.window.clamped_position(
+        QPoint(target_x, controller.window.floor_y())
+    )
+    assert controller.player.state_name == "walking-right"
+    assert controller._attention_active
+    assert controller._attention_after_move
+    assert played == []
+
+    controller._move_progress = controller._move_distance
+    controller._move_step()
+
+    assert controller.player.state_name == "hug"
+    assert played == ["hug.wav"]
+    assert messages[0][0] == "主人，来陪我玩嘛"
+
+    controller._animation_finished("hug")
+
+    assert controller.player.state_name == "idle"
+    assert controller.attention_timer.interval() == 360_000
+    assert controller.attention_timer.isActive()
+
+
+def test_attention_delay_setting_clamps_and_reschedules(
+    qtbot, tmp_path, monkeypatch, request
+):
+    controller = make_controller(tmp_path, monkeypatch, request)
+    qtbot.addWidget(controller.window)
+    changed = []
+    controller.attention_delay_changed.connect(changed.append)
+
+    controller.set_attention_delay_minutes(1)
+
+    assert controller.settings.attention_delay_minutes == 5
+    assert controller.settings.attention_repeat_minutes == 5
+    assert controller.attention_timer.interval() == 300_000
+    assert controller.attention_timer.isActive()
+    assert changed == [5]
+
+
+def test_autonomous_animation_does_not_reset_attention_timer(
+    qtbot, tmp_path, monkeypatch, request
+):
+    controller = make_controller(tmp_path, monkeypatch, request)
+    qtbot.addWidget(controller.window)
+    controller.attention_timer.start(12_345)
+
+    controller._animation_finished("heart")
+
+    assert controller.attention_timer.interval() == 12_345
+    assert controller.attention_timer.isActive()
 
 
 def test_sitting_holds_until_next_click(
@@ -231,3 +335,12 @@ def test_tray_actions_toggle_visibility_roaming_mute_and_size(
     assert controller.settings.muted
     tray.size_actions[240].trigger()
     assert controller.window.pet_height == 240
+    monkeypatch.setattr(
+        tray_module.QInputDialog,
+        "getInt",
+        lambda *args: (12, True),
+    )
+    tray.attention_delay_action.trigger()
+    assert controller.settings.attention_delay_minutes == 12
+    assert controller.settings.attention_repeat_minutes == 12
+    assert "12" in tray.attention_delay_action.text()

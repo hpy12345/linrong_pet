@@ -30,7 +30,7 @@ def render(
         for slot, (state_name, state) in enumerate(states):
             if state_name == "sitting":
                 index = int(state["frames"]) - 1
-            elif state_name == "heart":
+            elif state_name in {"heart", "hug"}:
                 index = 5
             else:
                 index = 0

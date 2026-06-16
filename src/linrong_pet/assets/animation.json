@@ -31,40 +31,40 @@
       "durations_ms": [115, 115, 115, 220],
       "loop": false
     },
-    "jumping": {
-      "row": 4,
-      "frames": 5,
-      "durations_ms": [115, 110, 105, 115, 220],
-      "loop": false
-    },
     "sitting": {
-      "row": 5,
+      "row": 4,
       "frames": 8,
       "durations_ms": [115, 115, 120, 120, 125, 125, 130, 220],
       "loop": false
     },
     "waiting": {
-      "row": 6,
+      "row": 5,
       "frames": 6,
       "durations_ms": [125, 125, 125, 125, 125, 220],
       "loop": false
     },
     "running": {
-      "row": 7,
+      "row": 6,
       "frames": 6,
       "durations_ms": [105, 105, 105, 105, 105, 190],
       "loop": false
     },
     "review": {
-      "row": 8,
+      "row": 7,
       "frames": 6,
       "durations_ms": [125, 125, 125, 125, 125, 220],
       "loop": false
     },
     "heart": {
-      "row": 9,
+      "row": 8,
       "frames": 8,
       "durations_ms": [110, 110, 120, 150, 210, 180, 150, 260],
+      "loop": false
+    },
+    "hug": {
+      "row": 9,
+      "frames": 8,
+      "durations_ms": [120, 140, 170, 220, 470, 420, 320, 260],
       "loop": false
     }
   }

@@ -7,28 +7,47 @@ import sys
 import tempfile
 import wave
 from array import array
+from dataclasses import dataclass
 from pathlib import Path
 
 import edge_tts
 import miniaudio
 
 
+@dataclass(frozen=True, slots=True)
+class VoiceLine:
+    text: str
+    rate: str
+    pitch: str
+    volume: str = "-2%"
+
+
 LINES = {
-    "hello.wav": "你好呀，我是林榕。",
-    "happy.wav": "见到你真开心。",
-    "found.wav": "呀，你找到我啦。",
-    "poked.wav": "别一直戳我嘛。",
-    "company.wav": "需要我陪你一会儿吗？",
-    "rest.wav": "记得让眼睛休息一下哦。",
-    "love.wav": "爱你哦",
+    "hello.wav": VoiceLine("你好呀，我是林榕。", "-3%", "+0Hz"),
+    "found.wav": VoiceLine("呀，你找到我啦。", "-2%", "+1Hz"),
+    "poked.wav": VoiceLine("别一直戳我嘛。", "-4%", "+1Hz"),
+    "company.wav": VoiceLine("需要我陪你一会儿吗？", "-9%", "-1Hz"),
+    "rest.wav": VoiceLine("记得让眼睛休息一下哦。", "-10%", "-1Hz"),
+    "love.wav": VoiceLine("爱你哦", "-4%", "+1Hz"),
+    "hug.wav": VoiceLine("主人，来陪我玩嘛", "-6%", "+1Hz"),
 }
 
 
 VOICE = "zh-CN-XiaoxiaoNeural"
-RATE = "+2%"
-PITCH = "+6Hz"
-VOLUME = "-2%"
 SAMPLE_RATE = 24000
+
+
+def trim_silence(samples: array, sample_rate: int) -> array:
+    active = [
+        index
+        for index, sample in enumerate(samples)
+        if abs(sample) >= 250
+    ]
+    if not active:
+        raise ValueError("generated voice contains no audible speech")
+    start = max(0, active[0] - round(sample_rate * 0.10))
+    end = min(len(samples), active[-1] + 1 + round(sample_rate * 0.18))
+    return array("h", samples[start:end])
 
 
 def normalized_samples(samples: array, sample_rate: int) -> array:
@@ -54,16 +73,16 @@ async def synthesize(
     output_dir.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="linrong-voice-") as temp:
         temp_dir = Path(temp)
-        for filename, text in LINES.items():
+        for filename, line in LINES.items():
             if selected is not None and filename not in selected:
                 continue
             media_path = temp_dir / filename.replace(".wav", ".mp3")
             communicator = edge_tts.Communicate(
-                text,
+                line.text,
                 VOICE,
-                rate=RATE,
-                volume=VOLUME,
-                pitch=PITCH,
+                rate=line.rate,
+                volume=line.volume,
+                pitch=line.pitch,
                 connect_timeout=20,
                 receive_timeout=60,
             )
@@ -74,7 +93,10 @@ async def synthesize(
                 nchannels=1,
                 sample_rate=SAMPLE_RATE,
             )
-            samples = normalized_samples(decoded.samples, SAMPLE_RATE)
+            samples = normalized_samples(
+                trim_silence(decoded.samples, SAMPLE_RATE),
+                SAMPLE_RATE,
+            )
             output_path = output_dir / filename
             with wave.open(str(output_path), "wb") as stream:
                 stream.setnchannels(1)
@@ -82,6 +104,11 @@ async def synthesize(
                 stream.setframerate(SAMPLE_RATE)
                 stream.writeframes(samples.tobytes())
             print(f"generated {output_path.name} with {VOICE}")
+    if selected is None:
+        for path in output_dir.glob("*.wav"):
+            if path.name not in LINES:
+                path.unlink()
+                print(f"removed stale voice asset {path.name}")
 
 
 def main() -> int:
